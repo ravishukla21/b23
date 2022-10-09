@@ -3,11 +3,67 @@
 <head>
    
     <title>Document</title>
+    <style>
+      h1{
+        margin:auto;
+        text-align:center;
+      }  
+      .whole{
+        margin:auto;
+        text-align:center;
+        width:80%
+        
+      }
+      #one{
+        height:50px;
+        background-color: aqua;
+        margin-bottom:20px;
+
+      }
+      #two{
+        height:50px;
+        background-color: greenyellow;
+
+      }
+      #three{
+        height:50px;
+        background-color: aquamarine;
+
+      }
+      #four{
+        height:50px;
+        background-color: brown;
+
+      }
+      #five{
+        height:50px;background-color: aqua;
+      }
+      #six{
+        height:50px;background-color: aqua;
+      }
+      #seven{
+        height:50px;background-color: blueviolet;
+      }
+      #extraone{
+        height:50px;background-color: blue;
+
+      }
+      #extratwo{
+        height:50px;background-color: blueviolet;
+
+      }
+      .lower{
+        margin-top:50px;margin-left:30%;width:50%;text-align: center;border-color: black;
+
+      }
+
+
+    </style>
 
 </head>
 <body>
-    <h1 style="margin:auto;text-align:center">THE PERODIC TABLE OF ELEMENTS</h1>
-    <table style="margin:auto;text-align:center;width:80%" border="0px">
+    <h1>THE PERODIC TABLE OF ELEMENTS</h1>
+    <table class="whole"  border="0px">
         <!-- <!-- <tr style="height:50px;"> -->
             <!-- <th></th> -->
             <!-- <th>1</th>
@@ -29,13 +85,13 @@
             <th>17</th>
             <th>18</th> -->
         <!-- </tr> --> -->
-        <tr style="height:50px;background-color: aqua;margin-bottom:20px">
+        <tr id="one"  >
             <!-- <th>1</th> -->
             <td bgcolor="red" >H <sup>1</sup></td>
             <td colspan="16" bgcolor="white"></td>
             <td bgcolor="yellow">He<sup>2</sup></td>
         </tr>
-        <tr style="height:50px;background-color: greenyellow;">
+        <tr id="two" >
             <!-- <th>2</th> -->
             <td>Li<sup>3</sup></td>
             <td>Be<sup>4</sup></td>
@@ -49,7 +105,7 @@
 
 
         </tr>
-        <tr style="height:50px;background-color: aquamarine;">
+        <tr id="three">
             <!-- <th>3</th> -->
             <td>Li<sup>3</sup></td>
             <td>Be<sup>4</sup></td>
@@ -62,7 +118,7 @@
             <td>Be<sup>4</sup></td>
             
         </tr>
-        <tr style="height:50px;background-color: brown;">
+        <tr id="four">
             <!-- <th>4</th> -->
             <td>Li<sup>3</sup></td>
             <td>Be<sup>4</sup></td>
@@ -84,7 +140,7 @@
             <td>Be<sup>4</sup></td>
 
         </tr>
-        <tr style="height:50px;background-color: aqua;">
+        <tr id="five" >
             <!-- <th>5</th> -->
             <td>Li<sup>3</sup></td>
             <td>Be<sup>4</sup></td>
@@ -106,7 +162,7 @@
             <td>Be<sup>4</sup></td>
 
         </tr>
-        <tr style="height:50px;background-color: aqua;">
+        <tr id="six" >
             <!-- <th>6</th> -->
             <td>Li<sup>3</sup></td>
             <td>Be<sup>4</sup></td>
@@ -128,7 +184,7 @@
             <td>Be<sup>4</sup></td>
 
         </tr>
-        <tr style="height:50px;background-color: blueviolet;">
+        <tr id="seven" >
             <!-- <th>7</th> -->
             <td>Li<sup>3</sup></td>
             <td>Be<sup>4</sup></td>
@@ -151,8 +207,8 @@
 
         </tr>
     </table>
-    <table style="margin-top:50px;margin-left:30%;width:50%;text-align: center;border-color: black;" border="0px">
-        <tr style="height:50px;background-color: blue;">
+    <table class="lower" border="0px">
+        <tr id="extraone">
             <td>Li</td>
             <td>li</td>
             <td>li</td>
@@ -168,7 +224,7 @@
             <td>li</td>
             <td>li</td>
         </tr>
-        <tr style="height:50px;background-color: blueviolet;">
+        <tr id="extratwo">
             <td>li</td>
             <td>li</td>
             <td>li</td>
