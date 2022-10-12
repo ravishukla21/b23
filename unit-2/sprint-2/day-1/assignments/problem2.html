@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALC</title>
+    <style>
+        #hu{
+            text-align: center;color:aqua;font-size: 60px;
+        }
+      
+        .cont{
+            height:400px;width:50%;border:1px solid blue;margin: auto;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px
+
+        }
+        .cont > div{
+            height:80%;width:70%;border:0px solid blue;margin-top:40px;margin-left: 60px;
+        }
+        .cont > div > div {
+            height:15%;width: 90%;border:0px solid green;margin-top:10px;margin-left: 15px;
+            
+        }
+        #topone {
+           box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;border-radius: 5px;
+
+        }
+        .okay{
+            display:flex;justify-content: space-between;
+        }
+        .okay > div{
+            height:70%;width:20%;border:0px solid black;margin-top:5px;text-align: center;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;font-size:x-large;border-radius: 5px;
+        }
+        #redone{
+            background-color: red;font-size:x-large;border-radius: 5px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px
+        }
+        #blackone{
+            background-color: black;color: white;font-size:x-large;
+            border-radius: 5px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <h1 id="hu">Masai Calculator</h1>
+   <div class="cont">
+    <div>
+        <div id="topone"> </div>
+        <div class="okay">
+            <div> 
+                1</div>
+            <div>2</div>
+            <div>3</div>
+            <div id="blackone">+</div>
+        </div>
+        <div class="okay">
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div id="blackone">-</div>
+        </div>
+        <div class="okay">
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div id="blackone">x</div>
+        </div>
+        <div class="okay">
+            <div id="redone">C</div>
+            <div>0</div>
+            <div id="blackone">=</div>
+            <div id="blackone">/</div>
+        </div>
+
+    </div>
+   
+   </div>
+
+    
+</body>
+</html>

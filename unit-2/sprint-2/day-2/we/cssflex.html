@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS FLEX</title>
+    <style>
+        *{
+            margin:0px;padding:0px;
+        }
+       
+        .top{
+            display:flex;color:white;background-color: rgb(35, 80, 80);
+            height:80px;
+            align-items:center;justify-content: space-between;padding: 0px 15px;
+            width:80%;margin:auto;
+        }
+        .top > div{
+            width:400px;display:flex;justify-content: space-evenly;
+
+        }
+        .gallary{
+            display:flex;flex-wrap: wrap;margin:20px 20px;width:80%;margin:auto;
+
+        }
+       
+         .gallary > img{
+            width:30%;margin: 5px 5px;border-radius: 5px;
+        } 
+        #middle{
+            color: red;text-align: center;font-size: large;margin-top:20px;
+        }
+       
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="top">
+        <h3>masai</h3>
+        <div>
+            <h3>HOME</h3>
+            <h3>GALLERY</h3>
+            <h3>ABOUT</h3>
+        </div>
+        
+
+    </div>
+    <h1 id="middle">PHOTO GALLERY</h1>
+    <div class="gallary">
+       
+            <img  src="https://preview.colorlib.com/theme/pentax/img/project/1.jpg.webp"/>
+      
+      
+            <img    src="https://preview.colorlib.com/theme/pentax/img/project/1.jpg.webp"/>
+        
+       
+            <img   src="https://preview.colorlib.com/theme/pentax/img/project/1.jpg.webp"/>
+       
+     
+            <img   src="https://preview.colorlib.com/theme/pentax/img/project/1.jpg.webp"/>
+     
+      
+            <img   src="https://preview.colorlib.com/theme/pentax/img/project/1.jpg.webp"/>
+     
+      
+            <img src="https://preview.colorlib.com/theme/pentax/img/project/1.jpg.webp"/>
+      
+    </div>
+  
+</body>
+</html>
