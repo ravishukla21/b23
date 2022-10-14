@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0px;padding:0px;
+
+        }
+        .top{
+            height:100px;width:90%;border: px solid red;display:flex;
+            align-items:center;justify-content: space-between;padding:0px 50px;background-color: rgb(255, 255, 255);
+            margin:auto;
+            /* box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px; */
+
+        }
+        .top>div:nth-child(1){
+            box-shadow: rgba(57, 57, 224, 0.17) 0px -23px 25px 0px inset, rgba(60, 85, 225, 0.15) 0px -36px 30px 0px inset, rgba(41, 60, 207, 0.1) 0px -79px 40px 0px inset, rgba(63, 105, 233, 0.06) 0px 2px 1px, rgba(48, 51, 219, 0.09) 0px 4px 2px, rgba(70, 32, 225, 0.09) 0px 8px 4px, rgba(106, 52, 221, 0.09) 0px 16px 8px, rgba(58, 87, 216, 0.09) 0px 32px 16px;
+            width:10%;height:80%;color:rgb(90, 69, 221);align-items:center;
+        }
+        
+        .top > div{
+            width:50%;border:0px solid rgb(205, 17, 17);display:flex;justify-content: space-evenly;height:80%;align-items: center;
+            
+        }
+        .bottom{
+            height:500px;width:90%;border:0px solid black;margin:auto;padding:0px 50px;display:flex;margin-bottom: 50px;box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+        }
+        .bottom > div{
+            width:50%;height:90%; border: 0px solid red;margin:20px 0px;display:flex;flex-wrap: wrap;justify-content: flex-start;
+            
+        }
+        .bottom>div:nth-child(2)>div{
+            width:40%; border:0px solid blue;margin:4px 0px;
+
+        }
+        #leftbottom{
+            flex-wrap:wrap;border:0px solid orange;display:flex;text-align: center;
+        }
+        #leftbottom > div{
+            border:0px solid red;
+            height:80%;margin:auto;
+        }
+        #leftbottom>div:nth-child(1){
+            width:30%
+
+        }
+        #leftbottom>div:nth-child(2){
+            width:60%
+
+        }
+        #rightbottom>div{
+            box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+            padding:20px 30px;
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <div class="top">
+        <div><h1>StudyLab</h1></div>
+         
+        <div>
+        <h1>Home</h1>
+        <h1>About</h1>
+        <h1>Course</h1>
+        <h1>Course</h1>
+        <h1>Course</h1>
+        <h1>Course</h1>
+
+        </div>
+        
+    </div>
+    <div class="bottom">
+        <div>
+            <h1>WELCOME TO STUDY LAB</h1>
+            <h1>We are study lab an online learning center</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque neque eos voluptates odit itaque. Praesentium!
+                <br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, culpa.
+            </p>
+            
+            
+            <div id="leftbottom">
+                <div>
+                    <img width="70%" src="https://cdn.shopify.com/s/files/1/0564/5582/3530/products/SOil_370x_crop_center.png?v=1664123743" alt="IMAGE">
+
+                </div>
+               
+                <div>
+                    <h3>LEARNING ANYTHING FROM THE STUDY TAB</h3>
+                </div>
+            </div>
+
+        </div>
+        <div id="rightbottom">
+            <div>
+                <img width="40%" src="https://cdn.shopify.com/s/files/1/0564/5582/3530/files/100.png?v=1622042150" alt="one">
+                <h3>TOP QUALITY CONTENT</h3>
+                <P>Lorem ipsum dolor sit amet.</P>
+            </div>
+            <div>
+                <img  width="40%" src="https://cdn.shopify.com/s/files/1/0564/5582/3530/files/100.png?v=1622042150" alt="two">
+                <h3>TOP QUALITY CONTENT</h3>
+                <P>Lorem ipsum dolor sit amet.</P>
+            </div>
+            <div>
+                <img width="40%" src="https://cdn.shopify.com/s/files/1/0564/5582/3530/files/100.png?v=1622042150" alt="three">
+                <h3>TOP QUALITY CONTENT</h3>
+                <P>Lorem ipsum dolor sit amet.</P>
+            </div>
+            <div>
+                <img width="40%" src="https://cdn.shopify.com/s/files/1/0564/5582/3530/files/100.png?v=1622042150" alt="four">
+                <h3>TOP QUALITY CONTENT</h3>
+                <P>Lorem ipsum dolor sit amet.</P>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
