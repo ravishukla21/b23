@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout-1</title>
+    <style>
+        #top{
+            display:grid;
+            grid-template-columns:repeat(4,1fr);
+            grid-auto-rows: 200px;
+            gap:20px;
+            grid-template-areas:
+             "one one one one"
+             "two three four five"
+            
+
+        }
+        /* #top>div{
+            padding:20px;margin:20px;
+        } */
+
+
+        #top>div:nth-child(1){
+            background-color: yellow;
+            grid-area: one;
+        }
+        #top>div:nth-child(2){
+            background-color: red ;
+            grid-area: two;
+        }
+        #top>div:nth-child(3){background-color: green;
+            grid-area: three;
+        }
+        #top>div:nth-child(4){background-color: blue;
+            grid-area: four;
+        }
+        #top>div:nth-child(5){background-color: gray;
+            grid-area: five;
+        }
+
+        @media screen and (min-width:601px) and (max-width:900px) {
+            #top{
+                grid-template-columns:repeat(2,1fr);
+                grid-auto-rows: 200px;
+
+                grid-template-areas:
+                 "one one"
+                 "two  four"
+                 "three five"
+
+            }
+            
+        }
+        @media screen and (min-width:100px) and (max-width:600px) {
+            #top{
+                grid-template-columns:repeat(1,1fr);
+                grid-auto-rows: 200px;
+
+                grid-template-areas:
+                 "one"
+                 "two"
+                 "five"
+                "three"
+                 "four"
+
+            }
+            
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div id="top">
+        <div><h3>Navigation</h3></div>
+        <div><p>Box-1</p></div>
+        <div><p>Box-2</p></div>
+        <div><p>Box-3</p></div>
+        <div><p>Box-4</p></div>
+    </div>
+</body>
+</html>
