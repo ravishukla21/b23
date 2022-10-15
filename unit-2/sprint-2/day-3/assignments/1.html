@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <style>
+        #container{
+            display:grid;grid-template-columns: repeat(4,1fr);grid-auto-rows:100px;gap:20px;
+            grid-template-areas:
+             "one one two two"
+             "three four four four"
+             "five five five five"
+
+        }
+         #container>div{
+            padding:20px;font-size:20px;
+            border: 1px solid black;
+            border-radius: 5px;
+            background-color: gray;
+            
+        }
+        #container>div:nth-child(1){
+            /* background-color: aqua; */
+            grid-area: one;
+        }
+        #container>div:nth-child(2){
+            /* background-color: rgb(27, 23, 220); */
+            grid-area: two;
+        }
+        #container>div:nth-child(3){
+            /* background-color: rgb(232, 41, 66); */
+            grid-area: three;
+        }
+        #container>div:nth-child(4){
+            /* background-color: rgb(203, 26, 159); */
+            grid-area: four;
+        }
+        #container>div:nth-child(5){
+            /* background-color: rgb(192, 152, 24); */
+            grid-area: five;
+        } 
+        /* #container>div:nth-child(6){
+            /* background-color: rgb(24, 192, 44); */
+            grid-area: six;
+        }  */
+        
+
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <!-- <div>6</div> -->
+    </div>
+</body>
+</html>
