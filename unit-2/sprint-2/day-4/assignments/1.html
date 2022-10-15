@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MQlayout2</title>
+    <style>
+        #container{
+            display:grid;
+            grid-template-columns: repeat(2,1fr);
+            grid-template-rows: 100px 200px;
+            gap:20px;
+            grid-template-areas: "yellow1 yellow1"
+            "red1 green1";
+
+        }
+        @media screen  and (min-width:100px) and (max-width:600px){
+            #container{
+                grid-template-columns: repeat(1,1fr);
+                grid-template-rows: 100px 200px 200px;
+                grid-template-areas:
+                 "yellow1"
+                 "red1"
+                "green1";
+                
+            }
+            
+        }
+        #container>div:nth-child(1){
+            background-color: yellow;grid-area: yellow1;height: 100px;
+        }
+        #container>div:nth-child(2){
+            background-color: rgb(219, 12, 12);grid-area: red1;
+        }
+        #container>div:nth-child(3){
+            background-color: rgb(27, 211, 52);grid-area: green1;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div><h1>NAVIGATION</h1></div>
+        <div><h3>Left Box</h3></div>
+        <div><h3>Right Box</h3></div>
+    </div>
+    
+</body>
+</html>

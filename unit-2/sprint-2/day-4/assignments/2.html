@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>investors</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        .board{
+            height:auto;
+            border:0px solid black;
+           
+            text-align: center;
+        }
+      
+        #top{
+            display:grid;
+            grid-template-columns:repeat(3,30%);
+            grid-auto-rows: auto;border: 0px solid green;
+            gap:0px 52px;
+            justify-content: space-evenly;
+            margin:10px 30px;
+            grid-template-areas: "topone toptwo topthree";
+        }
+      
+        #top img{
+            width:100%;
+        }
+        #bottom{
+            display:grid;
+            grid-template-columns:repeat(4,20%);
+            grid-auto-rows: auto; border: px solid green;
+            gap:10px 52px;
+            justify-content: space-evenly;
+            margin:10px 30px;
+            text-align: center;
+            grid-template-areas: 
+            "one two three four"
+            "five six seven eigth"
+            "nine ten eleven twelve"
+            "thirteen fourteen fiveteen sixteen"
+            
+           
+        }
+        @media screen and (min-width:601px) and (max-width:900px) {
+            #top{
+                grid-template-columns:repeat(3,1fr);
+                /* grid-auto-rows: 100px; */
+                grid-template-areas: 
+                 "topone toptwo topthree"
+            }
+            #bottom{
+                grid-template-columns:repeat(3, 1fr);
+                /* grid-auto-rows: 100px; */ 
+                grid-template-areas: 
+                 "one two three"
+                 "four five six"
+                 "seven eigth nine"
+                 "ten eleven twelve"
+                 "thirteen fourteen fiveteen" 
+            }
+        }
+        @media screen and (min-width:100px) and (max-width:600px) {
+            #top{
+                grid-template-columns:repeat(1,1fr);
+                /* grid-auto-rows: 100px; */
+                grid-template-areas: 
+                 "topone" "toptwo" "topthree"
+            }
+            #bottom{
+                grid-template-columns:repeat(2, 1fr);
+                /* grid-auto-rows: 100px; */ 
+                grid-template-areas: 
+                 "one two" 
+                 "three four"
+                 "five six"
+                 "seven eigth"
+                 "nine ten"
+                 "eleven twelve"
+                 "thirteen fourteen"
+                 "fiveteen sixteen" 
+            }
+        }
+        #bottom >div> h1 ~ img{
+            border:0px solid red;
+            width:80%;
+            align-items: center;
+        }
+        #bottom > div{
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            border:0px solid green;
+            border-radius: 10px;
+            
+
+        
+        }
+       
+        #bottom>div:nth-child(1){grid-area: one;}
+        #bottom>div:nth-child(2){grid-area: two;}
+        #bottom>div:nth-child(3){grid-area: three;}
+        #bottom>div:nth-child(4){grid-area: four;}
+        #bottom>div:nth-child(5){grid-area: five;}
+        #bottom>div:nth-child(6){grid-area: six;}
+        #bottom>div:nth-child(7){grid-area: seven;}
+        #bottom>div:nth-child(8){grid-area: eigth;}
+        #bottom>div:nth-child(9){grid-area: nine;}
+        #bottom>div:nth-child(10){grid-area: ten;}
+        #bottom>div:nth-child(11){grid-area: eleven;}
+        #bottom>div:nth-child(12){grid-area: twelve;}
+        #bottom>div:nth-child(13){grid-area: thirteen;}
+        #bottom>div:nth-child(14){grid-area: fourteen;}
+        #bottom>div:nth-child(15){grid-area: fiveteen;}
+        #top>div:nth-child(1){grid-area: topone;}
+        #top>div:nth-child(2){grid-area: toptwo;}
+        #top>div:nth-child(3){grid-area: topthree;}
+
+       
+
+
+       
+
+
+    </style>
+</head>
+<body>
+    <div class="board">
+        <h1 >BOARD MEMBERS</h1>
+
+    </div>
+   
+    <div id="top">
+        <div><img  width="100%" src="https://www.masaischool.com/img/our-investors/india-q-borderless.svg" alt=""></div>
+        <div> <img src="https://www.masaischool.com/img/our-investors/india-q-borderless.svg" alt=""></div>
+        <div>  <img src="https://www.masaischool.com/img/our-investors/india-q-borderless.svg" alt=""></div>
+    </div>
+    <div class="board">
+        <h1>Strategic Investors</h1>
+    </div>
+    <div id="bottom">
+        <div>
+            
+                <img width="100%" src="https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg" alt="vijay">
+                <h1>NAME</h1>
+                <h4>POSITION</h4>
+                <img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg" alt="companylogo">
+
+            
+           
+        </div>
+        <div><img width="100%"  src="https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg" alt="vijay">
+            <h1>NAME</h1>
+            <h4>POSITION</h4>
+            <img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg" alt="companylogo"></div>
+        <div><img width="100%"  src="https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg" alt="vijay">
+            <h1>NAME</h1>
+            <h4>POSITION</h4>
+            <img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg" alt="companylogo"></div>
+        <div><img width="100%" src="https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg" alt="vijay">
+            <h1>NAME</h1>
+            <h4>POSITION</h4>
+            <img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg" alt="companylogo"></div>
+        <div><img width="100%" src="https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg" alt="vijay">
+            <h1>NAME</h1>
+            <h4>POSITION</h4>
+            <img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg" alt="companylogo"></div>
+        <div><img width="100%" src="https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg" alt="vijay">
+            <h1>NAME</h1>
+            <h4>POSITION</h4>
+            <img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg" alt="companylogo"></div>
+        <div><img width="100%" src="https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg" alt="vijay">
+            <h1>NAME</h1>
+            <h4>POSITION</h4>
+            <img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg" alt="companylogo"></div>
+        <div><img width="100%" src="https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg" alt="vijay">
+            <h1>NAME</h1>
+            <h4>POSITION</h4>
+            <img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg" alt="companylogo"></div>
+        <div><img width="100%" src="https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg" alt="vijay">
+            <h1>NAME</h1>
+            <h4>POSITION</h4>
+            <img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg" alt="companylogo"></div>
+        <div><img width="100%" src="https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg" alt="vijay">
+            <h1>NAME</h1>
+            <h4>POSITION</h4>
+            <img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg" alt="companylogo"></div>
+        <div><img width="100%" src="https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg" alt="vijay">
+            <h1>NAME</h1>
+            <h4>POSITION</h4>
+            <img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg" alt="companylogo"></div>
+        <div><img width="100%"  src="https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg" alt="vijay">
+            <h1>NAME</h1>
+            <h4>POSITION</h4>
+            <img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg" alt="companylogo"></div>
+        <div><img width="100%" src="https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg" alt="vijay">
+            <h1>NAME</h1>
+            <h4>POSITION</h4>
+            <img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg" alt="companylogo"></div>
+        <div><img width="100%"  src="https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg" alt="vijay">
+            <h1>NAME</h1>
+            <h4>POSITION</h4>
+            <img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg" alt="companylogo"></div>
+        <div><img  width="100%" src="https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg" alt="vijay">
+            <h1>NAME</h1>
+            <h4>POSITION</h4>
+            <img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg" alt="companylogo"></div>
+        <!-- <div><img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg" alt="vijay">
+            <h1>NAME</h1>
+            <h4>POSITION</h4>
+            <img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg" alt="companylogo"></div> -->
+
+    </div>
+
+
+</body>
+</html>
