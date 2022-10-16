@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web-101 C2</title>
+
+  <style>
+    body {
+      background-color: rgb(244, 244, 244);
+    }
+
+    * {
+      margin: 0px;
+      padding: 0px;
+    }
+
+    .headings {
+      text-align: center;
+      margin: 25px 0px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-rows: auto;
+      gap: 10px;
+      margin: auto;
+      border: 1px solid black;
+      width: 80%;
+
+    }
+
+    .services>div {
+      display: flex;
+      margin: 20px 10px;
+      border: 1px solid blue;
+      
+    }
+
+    .services>div>div:nth-child(2) {
+      margin-left: 20px;
+    }
+
+    .discover {
+      display: flex;
+      margin: auto;
+      justify-content: space-between;
+      width: 80%;
+      border: 2px solid greenyellow;
+      margin-bottom: 50px;
+    }
+
+    .discover>div {
+      border: 1px solid brown;
+      margin: 20px;
+      text-align: center;
+    }
+
+    .doctors {
+      display: flex;
+      width: 80%;
+      border: 2px solid green;
+
+      margin: 50px auto;
+      
+      justify-content: space-between;
+    }
+
+    .doctors div{
+      border: 2px solid black;
+    }
+
+    .doctors>div:nth-child(2) {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap:20px;
+      padding: 10px;
+      border: 1px solid blue;
+      width: auto;
+    }
+
+    .doctors>div:nth-child(2)>div {
+      border: 1px solid black;
+      margin: 0px 5px;
+      padding: 5px;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      background-color: aqua;
+    }
+
+    .doctors>div:nth-child(1) {
+      margin: 20px;
+    }
+
+    .doctors>div:nth-child(1)>p {
+      margin: 10px 20px;
+    }
+
+
+
+
+    /* Medium screens */
+    @media all and (min-width: 651px) and (max-width: 900px) {
+      .services {
+
+        grid-template-columns: repeat(1, 1fr);
+        grid-auto-rows: auto;
+      }
+
+      .discover {
+        flex-direction: column;
+        /* flex-wrap: wrap; */
+      }
+      .doctors{
+        flex-direction: column;
+      }
+
+    }
+
+    /* Small screens */
+    @media all and (min-width: 250px) and (max-width: 650px) {
+      .services {
+
+        grid-template-columns: repeat(1, 1fr);
+
+      }
+
+      .services>div {
+        flex-direction: column;
+      }
+
+      .services>div>div:nth-child(2) {
+        margin-left: 0px;
+      }
+
+      .discover {
+        flex-direction: column;
+        /* flex-wrap: wrap; */
+      }
+      .doctors{
+        flex-direction: column;
+      }
+      .doctors>div:nth-child(2) {
+        grid-template-columns: repeat(2,1fr);
+        margin:auto;
+
+      }
+
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="headings">
+      <h1>North East Largest Network For Health Care</h1>
+      <p>Find best doctors across specialities or hospitals in your city.</p>
+    </div>
+    <div class="services">
+      <!-- 4 divs should be here -->
+      <div>
+        <div>
+          <img src="https://www.quickobook.com/assets/img/promo_test.jpg" />
+
+        </div>
+        <div>
+          <h2>NAME</h2>
+          <p>loremabsolute
+
+
+          </p>
+          <button>SEE MORE</button>
+        </div>
+      </div>
+      <div>
+        <div>
+          <img src="https://www.quickobook.com/assets/img/promo_test.jpg" />
+
+        </div>
+        <div>
+          <h2>NAME</h2>
+          <p>loremabsolute
+
+
+          </p>
+          <button>SEE MORE</button>
+        </div>
+      </div>
+      <div>
+        <div>
+          <img src="https://www.quickobook.com/assets/img/promo_test.jpg" />
+
+        </div>
+        <div>
+          <h2>NAME</h2>
+          <p>loremabsolute
+
+
+          </p>
+          <button>SEE MORE</button>
+        </div>
+      </div>
+      <div>
+        <div>
+          <img src="https://www.quickobook.com/assets/img/promo_test.jpg" />
+
+        </div>
+        <div>
+          <h2>NAME</h2>
+          <p>loremabsolute
+
+
+          </p>
+          <button>SEE MORE</button>
+        </div>
+      </div>
+
+    </div>
+    <div class="headings">
+      <h1>Discover the Online Appointment!</h1>
+      <p>
+        A step-by-step guide to build an on-demand appointment for patients
+      </p>
+    </div>
+    <div class="discover">
+      <!-- Three divs should be inside here  -->
+      <div>
+        <img width="100%"
+          src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-08-04/Screenshot%202022-08-03%20at%207.53.30%20PM_498205.png" />
+        <h3>Find A Doctor</h3>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+        </p>
+      </div>
+      <div>
+        <img width="100%"
+          src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-08-04/Screenshot%202022-08-03%20at%207.53.30%20PM_498205.png" />
+        <h3>Find A Doctor</h3>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+        </p>
+      </div>
+      <div>
+        <img width="100%"
+          src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-08-04/Screenshot%202022-08-03%20at%207.53.30%20PM_498205.png" />
+        <h3>Find A Doctor</h3>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+        </p>
+      </div>
+    </div>
+    <div class="doctors">
+      <!-- Two divs should be here and inside the second div 4 divs should be  -->
+      <div>
+        <h2>Heading</h2>
+        <p>Lorem, ipsum dolor.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <button>SEEMORE</button>
+      </div>
+      <div>
+        <div><img width="100%" src="https://www.quickobook.com/uploads/profiles/default_avatar.png" alt="">
+          <h3>Name</h3>
+          <p>Lorem, ipsum.</p>
+        </div>
+        <div><img width="100%" src="https://www.quickobook.com/uploads/profiles/default_avatar.png" alt="">
+          <h3>Name</h3>
+          <p>Lorem, ipsum.</p>
+        </div>
+        <div><img width="100%" src="https://www.quickobook.com/uploads/profiles/default_avatar.png" alt="">
+          <h3>Name</h3>
+          <p>Lorem, ipsum.</p>
+        </div>
+        <div><img width="100%" src="https://www.quickobook.com/uploads/profiles/default_avatar.png" alt="">
+          <h3>Name</h3>
+          <p>Lorem, ipsum.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
