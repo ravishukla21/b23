@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>layout3</title>
+
+
+    <style>
+       .count{
+        display: grid;
+      
+      gap:10px;
+      grid-template-columns :repeat(3,1fr);
+      grid-template-rows: auto;
+      grid-template-areas: "nav nav "
+                            "red  green"
+                            "red green2 "
+                            "red green3";
+              gap:5px;              
+     }
+     .count>div:nth-child(1){
+        
+        background-color: yellow;
+        grid-area: nav;
+        /* height:20px */
+     }
+     .count>div:nth-child(2){
+       
+        background-color: red;
+        grid-area: red;
+        /* height:110px */
+       
+    }
+    .count>div:nth-child(3){
+       
+        background-color: greenyellow;
+        grid-area: green;
+        /* height:33px; */
+        
+    }
+    .count>div:nth-child(4){
+       
+        background-color: greenyellow;
+        grid-area: green2;
+        /* height:33px; */
+    }
+    .count>div:nth-child(5){
+        
+        background-color: greenyellow;
+        grid-area: green3;
+        /* height:33px; */
+    }
+    @media all and (min-width:455px) and (max-width:800px){
+    .count{
+        grid-template-areas: "nav nav nav  "
+                         "red red red" 
+                        "green green2 green3";
+                        
+    }
+}
+    @media all and (min-width: 1px) and (max-width: 450px) {
+       .count{
+        grid-template-areas:"nav"
+                             "red  "
+                             "green "
+                             "green2"
+                             " green3" 
+       } 
+      
+       }
+    </style>
+</head>
+<body>
+    <div class="count">
+        <div>Navigation</div>
+        <div>Left Box</div>
+        <div>Right Box 1</div>
+        <div>Right Box 2</div>
+        <div>Right Box 3</div>
+    </div>
+</body>
+</html>
