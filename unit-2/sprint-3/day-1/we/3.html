@@ -5,14 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
 </head>
 <body>
-    <h1 id="masai"> Masai <i>Bangalore</i></h1>
+    <button onclick="hello()">Show Quote in console</button>
+    <p id="quote">Talk is cheap Show me the code</p>
+    
 </body>
 </html>
 <script>
-    let name=document.getElementById("masai")
-    console.log(name.innerHTML)
+    //write js here
+    function hello(){
+        console.log(document.getElementById("quote"));
+    }
 
-</script>
+  </script>
