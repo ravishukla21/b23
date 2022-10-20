@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masai Calculator</title>
+    <style>
+        #container {
+            display: grid;
+            grid-template-columns: repeat(4, 25%);
+            grid-auto-rows: 100px;
+            border: 0px solid blue;
+            background-color: antiquewhite;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+            width: 25%;
+            margin: auto;
+            padding: 5% 5%;
+            grid-template-areas:
+                "first first first first"
+                "one two three add1"
+                "four five six minus"
+                "seven eight nine multiply1"
+                "cancel zero1 equal divide"
+        }
+
+        #container>div {
+            padding: 2px;
+            margin: 2px;
+            text-align: center;
+            font-size: x-large;
+        }
+
+        #container>div:nth-child(1) {
+            grid-area: first;
+
+
+            background-color: aliceblue;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+        #container>div:nth-child(2) {
+            grid-area: one;
+            background-color: aliceblue;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+        #container>div:nth-child(3) {
+            grid-area: two;
+            background-color: aliceblue;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+        #container>div:nth-child(4) {
+            grid-area: three;
+            background-color: aliceblue;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+        #container>div:nth-child(5) {
+            grid-area: add1;
+            background-color: rgb(0, 0, 0);
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+        #container>div:nth-child(6) {
+            grid-area: four;
+            background-color: aliceblue;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+        #container>div:nth-child(7) {
+            grid-area: five;
+            background-color: aliceblue;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+        #container>div:nth-child(8) {
+            grid-area: six;
+            background-color: aliceblue;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+        #container>div:nth-child(9) {
+            grid-area: minus;
+            background-color: rgb(0, 0, 0);
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+        #container>div:nth-child(10) {
+            grid-area: seven;
+            background-color: aliceblue;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+        #container>div:nth-child(11) {
+            grid-area: eight;
+            background-color: aliceblue;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+        #container>div:nth-child(12) {
+            grid-area: nine;
+            background-color: aliceblue;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+        #container>div:nth-child(13) {
+            grid-area: multiply1;
+            background-color: rgb(0, 0, 0);
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+        #container>div:nth-child(14) {
+            grid-area: cancel;
+            background-color: rgb(249, 46, 19);
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+        #container>div:nth-child(15) {
+            grid-area: zero1;
+            background-color: aliceblue;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+        #container>div:nth-child(16) {
+            grid-area: equal;
+            background-color: black;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+        #container>div:nth-child(17) {
+            grid-area: divide;
+            background-color: black;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+        #white {
+            color: white;
+        }
+
+        #head {
+            text-align: center;
+        }
+        #display1~div:hover{
+           background-color: aqua;color:red;cursor:pointer;
+        }
+        
+
+    </style>
+</head>
+
+<body>
+    <h1 id="head">MASAI CALCULATOR</h1>
+    <div id="container">
+        <!-- calculator -->
+        <div style="padding:20px;" id="display1">
+        </div>
+        <!-- parent div keyboard -->
+        <div>
+            <h4>1</h4>
+        </div>
+        <div>
+            <h4>2</h4>
+        </div>
+        <div>
+            <h4>3</h4>
+        </div>
+        <div id="white">
+            <h4>+</h4>
+        </div>
+        <div>
+            <h4>4</h4>
+        </div>
+        <div>
+            <h4>5</h4>
+        </div>
+        <div>
+            <h4>6</h4>
+        </div>
+        <div id="white">
+            <h4>-</h4>
+        </div>
+        <div>
+            <h4>7</h4>
+        </div>
+        <div>
+            <h4>8</h4>
+        </div>
+        <div>
+            <h4>9</h4>
+        </div>
+        <div id="white">
+            <h4>*</h4>
+        </div>
+        <div id="white">
+            <h4>C</h4>
+        </div>
+        <div>
+            <h4>0</h4>
+        </div>
+        <div id="white">
+            <h4>=</h4>
+        </div>
+        <div id="white">
+            <h4>/</h4>
+        </div>
+
+    </div>
+</body>
+
+</html>
+<script>
+
+    console.log(document.querySelectorAll("#display1~div"));
+    //document.querySelectorAll("#display1~div");
+    let keys = document.querySelectorAll("#display1~div");
+    // console.log(keys)
+    for (let i = 0; i < keys.length; i++) {
+        keys[i].addEventListener("click", mycal)
+    }
+    let bag = ""
+    function mycal(event) {
+        //console.log("clicked");
+        console.log(event.target.innerText)
+        let targetNumber = event.target.innerText;
+        if (targetNumber == "C") {
+            bag = "";
+            document.querySelector("#display1").innerText = "";
+
+        } 
+        else if (targetNumber == "=") {
+           let res= eval( bag);
+           document.querySelector("#display1").innerText = res;
+        }
+        else {
+            bag = bag + targetNumber;
+
+            document.querySelector("#display1").innerText = bag;
+
+        }
+
+
+
+
+
+
+
+    }
+
+
+
+</script>
