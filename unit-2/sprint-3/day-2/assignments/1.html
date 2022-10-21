@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Check your BMI</h1>
+    <h3>Enter your height and weight to get your BMI</h3>
+    <input id="weight" type="number" placeholder="weight">
+    <input id="height" type="number" placeholder="height in meters">
+    <br>
+    <br>
+    <br>
+    <button onclick="myfun()">Calculate Bmi</button>
+    <p id="result"></p>
+
+
+    
+   
+
+    
+</body>
+</html>
+<script>
+    function myfun(){
+        
+        console.log(document.querySelector("#weight").value)
+        console.log(document.querySelector("#height").value)
+        // let result=document.querySelector("#result")
+
+        let one=document.querySelector("#weight").value
+        one=+one
+        let two=document.querySelector("#height").value
+        two=+two
+        let three=(one/(two*two));
+        console.log(eval(three))
+        if(three<=18.4){
+            console.log("UNDERWEIGHT")
+        document.querySelector("#result").innerText="my weight is "three"underweight"
+            // result.innerText="underweight"
+            
+
+        }else if(three>=18.5 && three<=24.9){
+            console.log("Normal weight")
+        }else if(three>=25 && three <= 29.9){
+            console.log("Overweight")
+        }else if(three>=30){
+            console.log("obESE")
+
+        }
+
+    }
+    
+
+
+</script>
