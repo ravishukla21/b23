@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>min and max</title>
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+        }
+
+        * {
+
+            margin: auto;
+        }
+
+        #table>div:hover,
+        #last:hover,
+        #enter:hover,#refresh:hover {
+            cursor: pointer;
+            background-color: blueviolet;
+        }
+
+
+
+
+
+        .top {
+            border: px solid blue;
+            display: flex;
+            justify-content: space-evenly;
+            width: 70%;
+
+        }
+
+        #beech {
+            text-align: center;
+        }
+
+        #topleft {
+            background-color: rgb(255, 94, 0);
+            color: rgb(0, 0, 0);
+            border: 2px solid black;
+            font-size: 50px;
+        }
+
+        #topright {
+            background-color: rgb(54, 211, 33);
+            color: rgb(0, 0, 0);
+            border: 2px solid black;
+            font-size: 50px;
+        }
+
+        #table {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            text-align: center;
+            justify-content: space-evenly;
+            gap: 5px 10px;
+            width: 30%;
+
+
+
+        }
+
+        #table>div {
+            background-color: aqua;
+            border: 1px solid black;
+            width: 50px;
+            height: 20px;
+            border-radius: 5px;
+            justify-content: space-evenly;
+
+        }
+
+        #display1 {
+            border: 1px solid black;
+            background-color: rgb(65, 222, 239);
+            height: 50px;
+            width: 100%;
+            width: 30%;
+            margin-bottom: 20px;
+
+        }
+
+        #last {
+            border: 1px solid rgb(157, 33, 33);
+            background-color: black;
+            color: white;
+            text-align: center;
+            width: 4%;
+            border-radius: 5px;
+            height: 20px;
+            margin-top: 20px;
+        }
+
+        #enter {
+
+            border: 1px solid rgb(157, 33, 33);
+            background-color: black;
+            color: white;
+            text-align: center;
+            width: 10%;
+            margin-top: 20px;
+            border-radius: 5px;
+
+        }
+
+        #refresh{
+
+            border: 1px solid rgb(157, 33, 33);
+            background-color: black;
+            color: white;
+            text-align: center;
+            width: 10%;
+            margin-top: 20px;
+            border-radius: 5px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top">
+        <div id="topleft">25 </div>
+        <div id="topright">1000 </div>
+    </div>
+    <div class="top">
+        <div>min </div>
+        <div>max </div>
+    </div>
+    <h1 id="beech">SCORE</h1>
+    <div id="display1"></div>
+    <div id="whole">
+        <div id="table">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+        </div>
+        <div id="last">0</div>
+        <div id="enter">ENTER</div>
+        <div id="refresh">Refresh</div>
+
+    </div>
+
+
+
+
+
+</body>
+
+</html>
+<script>
+    let keys = document.querySelectorAll("#last,#table>div,#refresh");
+    let enter1 = document.querySelector("#enter").addEventListener("click", mycal);
+
+    console.log(keys);
+    for (let i = 0; i < keys.length; i++) {
+        //console.log(keys[i].innerText);
+        keys[i].addEventListener("click", mycal);
+
+    }
+    let bag = ""
+
+    function mycal(event) {
+        console.log(event.target.innerText);
+
+        let targetname = event.target.innerText;
+
+
+        console.log(targetname)
+        console.log(typeof targetname)
+
+
+        if (targetname == "ENTER") {
+            bag = +bag;
+            console.log(bag);
+            console.log(typeof bag);
+            let new12 = document.querySelector("#topleft").innerText;
+            let new121 = document.querySelector("#topright").innerText;
+
+            new12 = +new12
+            console.log(new12)
+            if (bag < new12) {
+                document.querySelector("#topleft").innerText = bag;
+                document.querySelector("#display1").innerText = "";
+            } else if (bag > new121) {
+                document.querySelector("#topright").innerText = bag;
+                document.querySelector("#display1").innerText = "";
+
+            }
+            bag="";
+           
+
+
+
+
+
+        } else if (targetname == "Refresh") 
+        {
+            bag="";
+            document.querySelector("#display1").innerText = bag;
+            document.querySelector("#topleft").innerText = 25;
+            document.querySelector("#topright").innerText = 1000;
+
+
+        }
+        else {
+            bag = bag + targetname;
+            targetname = +targetname;
+            document.querySelector("#display1").innerText = bag;
+
+        }
+
+
+
+
+
+    }
+
+
+
+</script>

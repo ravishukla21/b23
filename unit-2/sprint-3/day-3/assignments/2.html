@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bmi</title>
+</head>
+<body>
+    <h1>Check Your BMI</h1>
+    <h2>Enter your weight and height below to check your results</h2>
+    <h1>Put Your Weight In here in kg</h1>
+    <input id="one1" type="number" placeholder="enter your weight in kg">
+    <h1>Add your height in cms</h1>
+    <input id="two2" type="number" placeholder="enter your height in cm" >
+    <br>
+    <button>Calculate BMI</button>
+    <h1 id="result"></h1>
+     
+    
+</body>
+</html>
+<script>
+    
+    document.querySelector("button").addEventListener("click",checkbmi);
+    function checkbmi() {
+        //console.log("hurray");
+        let num1=document.querySelector("#one1").value;
+        num1=+num1;
+        //console.log(num1);
+        
+        //console.log(typeof num1);
+        let num2=document.querySelector("#two2").value;
+        num2=+num2;
+        //console.log(num2);
+        //console.log(typeof num2);
+        let weightnew= (num1)/(num2*num2);
+        //console.log(weightnew);
+        if(weightnew<=18.4){
+           // console.log("Underweight");
+            document.querySelector("#result").innerText="Your BMI is "+weightnew+"YOU are UNDERWWEIGHT";
+        }
+        else if(weightnew >= 18.5 && weightnew <= 24.9){
+           // console.log("normal");
+            document.querySelector("#result").innerText="Your BMI is "+weightnew+"YOU are NORMAL";
+        }
+        else if (weightnew >= 25 && weightnew <= 29.9){
+            //console.log("overweight");
+            document.querySelector("#result").innerText="Your BMI is "+ weightnew  +"YOU are OVERWEIGHT";
+        }
+        else if (weightnew>=30){
+            //console.log("obese");
+            document.querySelector("#result").innerText="Your BMI is "+ weightnew+ "YOU are OBESE";
+        }
+
+    }
+
+
+</script>
