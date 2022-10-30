@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>like and dislike</title>
+</head>
+<body>
+    <h1></h1>
+    <h2></h2>
+   
+</body>
+</html>
+<script>
+    let head=document.createElement("img");
+    head.setAttribute("src","https://masai-website-images.s3.ap-south-1.amazonaws.com/Nrupul_d3fe3b289a.jpg");
+    head.setAttribute("width","10%");
+    document.querySelector("body").append(head);
+    
+    let likeone=document.createElement("button");
+    likeone.innerText="LIKE";
+    likeone.setAttribute("id","like");
+    document.querySelector("body").append(likeone);
+    let dislikeone=document.createElement("button");
+    dislikeone.innerText="DISLIKE";
+    dislikeone.setAttribute("id","dislike");
+    document.querySelector("body").append(dislikeone);
+
+     //like button
+    document.querySelector("#like").addEventListener("click",myfun);
+    let count=localStorage.getItem("like")||0;
+    document.querySelector("h1").innerText=count;
+
+    function myfun(){
+        count++;
+        document.querySelector("h1").innerText=count;
+        localStorage.setItem("like",count);
+    }
+
+
+     //dislike button
+    document.querySelector("#dislike").addEventListener("click",myfun1);
+    let count1=localStorage.getItem("dislike")||0;
+    document.querySelector("h2").innerText=count1;
+
+    function myfun1(){
+        count1++;
+        document.querySelector("h2").innerText=count1;
+        localStorage.setItem("dislike",count1);
+    }
+
+
+
+
+</script>

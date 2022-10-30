@@ -12,9 +12,9 @@ function mydoc(event){
     displayintable(name,id,dept,exp,email,mob);
     
 }
-     let row=document.createElement("tr");
+     
 function displayintable(name,id,dept,exp,email,mob){
-    // row=document.createElement("tr");
+    let row=document.createElement("tr");
     let td1=document.createElement("td");
     td1.innerText=name;
     let td2=document.createElement("td");
