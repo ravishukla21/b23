@@ -13,15 +13,25 @@
 
 </body>
 <script>
+    waitpromise(2000).then((val)=>{
+        document.querySelector("h1").append(val);
+        console.log(val);
 
-    let event1 = 1
-    setInterval(myfun, 1000);
-    function myfun() {
-       console.log("new")
-       document.querySelector("h1").innerHTML="new";
-       document.querySelector("body").append("new12")
+    })
 
-    }
+   function waitpromise(time){
+       let promise_me=new Promise((resolve, reject) => {
+        setInterval(function(){
+            resolve("completed the questiion")
+        },time)
+       })
+       //console.log(promise_me)
+
+       return promise_me
+
+   }
+   
+   
 </script>
 
 </html>
