@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stopwatch12</title>
+    <style>
+        body{
+            margin:0%;padding:0%;background-color: aqua;
+        }
+        .container{
+            margin:100px auto;
+            text-align: center;
+        }
+        h1{
+            font-size: 40px;
+            color:beige
+        }
+        p{
+            font-size: 50px;
+            color:rgb(5, 5, 4)
+        }
+        button{
+            border: none;
+            padding:20px 10px;
+            font-size: 20px;
+            margin:10px;
+
+        }
+        button:hover{
+            cursor:pointer;
+            background-color: green;
+            transition: 0.4s;
+            color:black;
+            border:none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>STOP WATCH</h1>
+        <p><span id="hours">00</span>hrs:<span id="minute">00</span>min:<span id="seconds">00</span>sec:<span id="tens">00</span>msec</p>
+        <button id="btn-start">start</button>
+        <button id="btn-stop">stop</button>
+        <button id="btn-reset">reset</button>
+
+    </div>
+    
+</body>
+
+<script>
+    var seconds=0;
+    var tens=0;
+    var minute=0;
+    var hours=0;
+    var outputseconds=document.querySelector("#seconds")
+    var outputtens=document.querySelector("#tens")
+    var outputminute=document.querySelector("#minute")
+    var outputhours=document.querySelector("#hours")
+    var buttonstart=document.querySelector("#btn-start")
+    var buttonstop=document.querySelector("#btn-stop")
+    var buttonreset=document.querySelector("#btn-reset")
+    var interval;
+    buttonstart.addEventListener("click", () =>{
+       // clearInterval(interval);
+        interval=setInterval(starttime,10);
+
+    });
+    buttonstop.addEventListener("click",() =>{
+        clearInterval(interval);
+
+
+    });
+    buttonreset.addEventListener("click",() =>{
+        clearInterval(interval);
+        tens="00";
+        seconds="00";
+        minute="00";
+        hours="00";
+        outputseconds.innerHTML= seconds;
+        outputtens.innerHTML=tens;
+        outputminute.innerHTML=minute;
+        outputhours.innerHTML=hours;
+    });
+
+    function starttime(){
+        tens++;
+        if(tens<=9){
+            outputtens.innerHTML= "0"+tens;
+
+        }
+        if(tens>9){
+            outputtens.innerHTML=tens;
+
+        }
+        if(tens> 99){
+            seconds++;
+            outputseconds.innerHTML="0"+seconds;
+            tens=0;
+            outputtens.innerHTML="0"+tens;
+
+        }
+
+        if(seconds >=10){
+            outputseconds.innerHTML=seconds;
+        }
+
+        if(seconds>=59){
+            minute++;
+            outputminute.innerHTML="0"+minute;
+            seconds=0;
+            outputseconds.innerHTML="0"+seconds;
+            tens=0;
+            outputtens.innerHTML="0"+tens;  
+        }
+        if(minute>=10){
+            outputminute.innerHTML=minute;
+        }
+        if(minute>=59){
+            
+            hours++;
+            outputhours.innerHTML="0"+hours;
+            minute=0;
+            outputminute.innerHTML="0"+minute;
+            seconds=0;
+            outputseconds.innerHTML="0"+seconds;
+            tens=0;
+            outputtens.innerHTML="0"+tens; 
+        }
+        if(hours>=10){
+            outputhours.innerHTML=hours;
+
+        }
+
+    };
+
+
+</script>
+
+</html>

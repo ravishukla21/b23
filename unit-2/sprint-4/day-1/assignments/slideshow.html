@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slideshow</title>
+    <style>
+        #main{
+            margin:auto;
+            display:block;
+            margin-left: 40%;
+        }
+       img{
+        height:auto;
+        width:50%;
+        margin:auto;
+       }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <img  id="one" src="https://picsum.photos/id/237/200/300" alt="one">
+        
+
+    </div>
+
+
+</body>
+<script>
+
+
+   function first(){
+    document.querySelector("#one").src="https://picsum.photos/id/236/200/300";
+
+   }
+   function second(){
+    document.querySelector("#one").src="https://picsum.photos/id/235/200/300";
+
+   }
+   function third(){
+    document.querySelector("#one").src="https://picsum.photos/id/237/200/300"
+
+   }
+   setInterval(first,2000);
+   setInterval(second,4000);
+   setInterval(third,6000);
+
+
+</script>
+
+
+</html>

@@ -32,20 +32,22 @@
 </head>
 <body>
     <div id="clock">
-        <div id="hrs"></div>
+        <div id="hrs">--</div>
         <span>:</span>
-        <div id="min"></div>
+        <div id="min">--</div>
         <span>:</span>
-        <div id="sec"></div>
+        <div id="sec">--</div>
         <span>:</span>
-        <div id="ampm"></div>
+        <div id="ampm">--</div>
 
     </div>
 
     
 </body>
 <script>
+    
     let clock=function(){
+    
         let date=new Date();
         let hours=date.getHours();
        
@@ -62,8 +64,11 @@
         document.querySelector("#min").innerText=minutes;
         document.querySelector("#sec").innerText=seconds;
         document.querySelector("#ampm").innerText=half;
-        setInterval(clock,1000);
+        
     };
-    clock();
+    setInterval(clock,1000);
+
+    
+    //clock();
 </script>
 </html>
