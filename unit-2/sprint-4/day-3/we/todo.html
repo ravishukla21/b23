@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo</title>
+</head>
+<style>
+    div {
+  display: flex;
+  justify-content: space-around;
+}
+table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 60%;
+  margin: auto;
+  margin-top: 50px;
+  text-align: center;
+}
+
+table td,
+table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+table tr:nth-child(even) {
+  background-color: #8caacf;
+}
+
+table tr:hover {
+  background-color: #ddd;
+}
+
+table thead th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #0468aa;
+  color: white;
+  text-align: center;
+}
+h1{
+    text-align: center;
+}
+
+</style>
+<body>
+    <h1>Todo</h1>
+    <h2></h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>title</th>
+                <th>status</th>
+            </tr>
+        </thead>
+        <tbody>
+           
+        </tbody>
+
+    </table>
+    
+    
+</body>
+<script>
+    let url="https://jsonplaceholder.typicode.com/todos"
+    fetch(url).then((res)=>res.json()).then((data)=>displaytable(data)).catch((err)=>displayerr(err));
+    function displayerr(err){
+        document.querySelector("h2").innerText=err;
+    }
+
+
+    function displaytable(arr){
+        for(let i=0;i<arr.length;i++){
+            let tr=document.createElement("tr");
+            let td1=document.createElement("td");
+            td1.innerText=arr[i].id;
+            let td2=document.createElement("td");
+            td2.innerText=arr[i].title;
+            let td3=document.createElement("td");
+            td3.innerText=arr[i].completed;
+            tr.append(td1,td2,td3);
+            document.querySelector("tbody").append(tr);
+
+        }
+    }
+</script>
+</html>
