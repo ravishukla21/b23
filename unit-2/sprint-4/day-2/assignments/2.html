@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1></h1>
+</body>
+<script>
+    let count = 21
+    let value = 20
+   // add_value(value);
+    function add_value(value) {
+        let new_check = new Promise((resolve, reject) => {
+            let val = count + value
+
+            if (val % 2 == 0) {
+                resolve("even")
+            } else {
+                reject("odd")
+            }
+
+        });
+        return new_check;
+
+    }
+    add_value(value).then((value) => {
+        console.log(value);
+        document.querySelector("h1").append(value);
+    })
+    add_value(value).catch((value) => {
+        console.log(value);
+        document.querySelector("h1").append(value);
+
+
+    })
+
+
+
+
+</script>
+
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+
+<body>
+    enter
+    <a href="dashboard.html">dashboard</a>
+    <a href="register.html">register</a>
+
+    <a href="vaccinated.html">vaccinated</a>
+
+    <select id="filter">
+        <option value="">Select Priority</option>
+        <option value="covaxin">covaxin</option>
+        <option value="covidshield">covidshield</option>
+        <option value="sputnik">sputnik</option>
+    </select>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID//</th>
+                <th>Name//</th>
+                <th>AGE//</th>
+                <th>CHOOSE DESTINATION//</th>
+                <th>CHOOSE PRIORITY//</th>
+                <th>CHOOSE VACCINE//</th>
+                <th>DELETE//</th>
+                <th>Vaccinated//</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Append the elements here using JS and DOM  -->
+        </tbody>
+    </table>
+
+</body>
+<script>
+
+    let task = JSON.parse(localStorage.getItem("newkey")) || []
+    showdata();
+
+    console.log(task)
+
+
+
+    function showdata() {
+        let tbody = document.querySelector("tbody")
+
+        console.log(typeof task, task)
+        tbody.innerHTML = null
+
+        task.map((elem, i) => {
+            let tr = document.createElement("tr");
+            let td1 = document.createElement("td");
+            td1.innerText = elem.id
+            let td2 = document.createElement("td");
+            td2.innerText = elem.name;
+            let td3 = document.createElement("td");
+            td3.innerText = elem.age;
+            let td4 = document.createElement("td");
+            td4.innerText = elem.destination;
+            let td5 = document.createElement("td");
+            td5.innerText = elem.priority;
+            let td6 = document.createElement("td");
+            td6.innerText = elem.vaccine;
+            let td7 = document.createElement("td");
+            td7.innerText = "delete";
+            let td8 = document.createElement("td");
+            td8.innerText = "vaccinated"
+            td8.addEventListener("click", function () {
+                delete1(elem, i);
+            })
+            tr.append(td1, td2, td3, td4, td5, td6, td7, td8)
+            tbody.append(tr);
+
+        })
+        let task_complete = JSON.parse(localStorage.getItem("vaccinated")) || [];
+        function delete1(elem,i){
+            console.log(elem,i)
+            task_complete.push(elem)
+            localStorage.setItem("vaccinated",JSON.stringify(task_complete))
+            console.log(task)
+            task.splice(i,1)
+            console.log(task)
+            localStorage.setItem("newkey",JSON.stringify(task))
+            showdata();
+
+        }
+
+        
+
+    }
+
+    document.querySelector("#filter").addEventListener("change", filter)
+
+
+
+    function filter() {
+        //var  task = JSON.parse(localStorage.getItem("newkey"))
+        let name = document.querySelector("#filter").value;
+        console.log(name)
+        //  if(elem.vaccine==""){
+        //         task=JSON.parse(localStorage.getItem("newkey"))
+        //         showdata()
+        //         return;
+        //     }
+        task = task.filter((el) => {
+
+            return el.vaccine == name
+        })
+
+        console.log(task)
+        showdata();
+    }
+
+</script>
+
+</html>
