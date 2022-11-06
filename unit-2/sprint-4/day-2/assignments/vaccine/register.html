@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+</head>
+<style>
+    #maindiv {
+        text-align: center;
+        /* margin:auto; */
+    }
+</style>
+
+<body>
+    newone
+
+    <a href="dashboard.html">dashboard</a>
+    <a href="register.html">register</a>
+
+    <a href="vaccinated.html">vaccinated</a>
+
+
+    <form>
+        <h1>ID</h1>
+        <input type="text" id="id" placeholder="Enter unique ID">
+        <h1>Name</h1>
+        <input type="text" id="name" placeholder="enter name">
+        <h1>Age</h1>
+        <input type="number" id="age" placeholder="enter age">
+        <h1>Choose Destination</h1>
+        <select id="destination">
+            <option value="">--Please choose an option</option>
+            <option value="employee">employee</option>
+            <option value="student">student</option>
+
+        </select>
+        <br>
+        <label for="priority">
+            <h1>choose priority</h1>
+        </label>
+        <br>
+        <select id="priority">
+            <option value="">--Please choose an option</option>
+            <option value="p0">p0</option>
+            <option value="p1">p1</option>
+            <option value="p2">p2</option>
+
+        </select>
+        <br>
+        <label for="vaccine">
+            <h1>choose vaccine</h1>
+        </label>
+        <br>
+        <select name="abc" id="vaccine">
+            <option value="">please select vaccine</option>
+            <option value="covidshield">covidshield</option>
+            <option value="covaxin">covaxin</option>
+            <option value="sputnik">sputnik</option>
+        </select>
+        <br>
+        <input type="submit" value="SUBMIT">
+
+    </form>
+
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID//</th>
+                <th>Name//</th>
+                <th>AGE//</th>
+                <th>CHOOSE DESTINATION//</th>
+                <th>CHOOSE PRIORITY//</th>
+                <th>CHOOSE VACCINE//</th>
+                <th>Mark As Completed//</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Append the elements here using JS and DOM  -->
+        </tbody>
+    </table>
+
+
+
+</body>
+<script>
+
+    document.querySelector("form").addEventListener("submit", submit);
+    let task = JSON.parse(localStorage.getItem("task")) || [];
+
+    function submit(event) {
+        event.preventDefault();
+        let id = document.querySelector("#id").value;
+        let name = document.querySelector("#name").value;
+        let age = document.querySelector("#age").value;
+        let destination = document.querySelector("#destination").value;
+        let priority = document.querySelector("#priority").value;
+        let vaccine = document.querySelector("#vaccine").value;
+        //console.log(id, name, age, destination, priority, vaccine);
+        let obj = {
+            id, name, age, destination, priority, vaccine
+        }
+        task.push(obj)
+        localStorage.setItem("task", JSON.stringify(task))
+        showdata();
+
+    }
+   // showdata();
+
+
+    function showdata() {
+        let tbody= document.querySelector("tbody")
+        task = JSON.parse(localStorage.getItem("task"))||[]
+        console.log(typeof task, task)
+        tbody.innerHTML=null
+
+        task.map((elem,i) => {
+            let tr = document.createElement("tr");
+            let td1 = document.createElement("td");
+            td1.innerText = elem.id
+            let td2 = document.createElement("td");
+            td2.innerText = elem.name;
+            let td3 = document.createElement("td");
+            td3.innerText = elem.age;
+            let td4 = document.createElement("td");
+            td4.innerText = elem.destination;
+            let td5 = document.createElement("td");
+            td5.innerText = elem.priority;
+            let td6 = document.createElement("td");
+            td6.innerText = elem.vaccine;
+            let td7=document.createElement("td");
+            td7.innerText="complete";
+            td7.addEventListener("click",function(){
+                delete1(elem,i);
+            })
+            tr.append(td1,td2,td3,td4,td5,td6,td7)
+            tbody.append(tr);
+
+        })
+        let task_complete=JSON.parse(localStorage.getItem("newkey")) || [];
+
+        function delete1(elem,i){
+            console.log(elem,i)
+            task_complete.push(elem)
+            localStorage.setItem("newkey",JSON.stringify(task_complete))
+            console.log(task)
+            task.splice(i,1)
+            console.log(task)
+            localStorage.setItem("task",JSON.stringify(task))
+            showdata();
+
+        }
+
+    }
+
+
+
+
+</script>
+
+</html>
