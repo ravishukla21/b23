@@ -57,10 +57,3 @@ function displaytable(todoarr) {
 }
 
 
-//td5.addEventListener("click",function(){
-        //   favarr.push(todoarr[i]);
-        // console.log(favarr);
-        //  localStorage.setItem("favour",JSON.stringify(favarr));
-
-
-        //  })

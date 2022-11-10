@@ -1,12 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            #cont{
+                display: grid;
+                grid-template-columns:repeat(4,1fr);
+                grid-template-rows: auto;
+                gap: 20px;
+            }
+            #cont>div>img{
+                width: 100%;
+            }
+            #cont>div{
+                text-align: center;
+                box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            }
     
-</body>
-</html>
+        </style>
+    </head>
+    <body>
+        <input oninput="submit()" type="text" placeholder="search product">
+        <div id="cont">
+         
+        </div>
+        
+    </body>
+    </html>
+    <script>
+        let arr=[]
+        let cartitem=JSON.parse(localStorage.getItem("cartite"))||[]
+        let url="https://fakestoreapi.com/products"
+        fetch(url).then((ress)=>ress.json())
+        .then((data)=>{
+            arr=data
+            console.log(data)
+            displaycart(data)})
+        .catch((err)=>(err))
+    
+    
+        function submit(){
+    a=document.querySelector("input").value
+    console.log(a)
+    let displaydata=arr.filter(function(elem){
+        return elem.title.toLowerCase().includes(a.toLowerCase());
+    })
+    displaycart(displaydata)
+        }
+    
+        document.querySelector("#con").innerHTML="";
+     function displaycart(data){
+        
+            data.forEach(function(ele){
+               let di= document.createElement("div")
+               let im=document.createElement("img")
+               im.setAttribute("src",ele.image)
+               let title=document.createElement("h2")
+               title.innerText=ele.title
+               let desc=document.createElement("p")
+               desc.innerText=ele.description
+    
+               let cost=document.createElement("p")
+               cost.innerText=ele.price
+    
+               let rating=document.createElement("p")
+               rating.innerText=ele.rating.rate
+    let but=document.createElement("button")
+    but.innerText="Add to cart"
+    but.addEventListener("click",function(){
+        cartitem.push(ele)
+        localStorage.setItem("cartite",JSON.stringify(cartitem))
+    })
+    
+               di.append(im,title,desc,cost,rating,but)
+               document.querySelector("#cont").append(di)
+            })
+        }
+    </script>
