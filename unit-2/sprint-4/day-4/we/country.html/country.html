@@ -4,12 +4,126 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>country</title>
+    <title>All Countries</title>
+    <style>
+        #cont{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: auto;
+            gap: 35px;
+               }
+        #cont > div > img{
+            width: 90%;
+            height: 400px;
+        }
+        #cont > div{
+            text-align: center;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+            border-radius: 7px;
+        }
+        /* for medi */
+        @media all and (min-width :400px) and (max-width : 700px) {
+           #cont{
+            grid-template-columns: repeat(2 ,1fr);
+           }
+        } 
+           /* for large */
+        @media all and (min-width :200px) and (max-width : 399px) {
+           #cont{
+            grid-template-columns: repeat(1 ,1fr);
+           } 
+        }
+    </style>
 </head>
 <body>
-    
+    <select onchange="Regions()">
+        <option value="Asia">Asia</option>
+        <option value="Americas">Americas</option>
+        <option value="Africa">Africa</option>
+        <option value="Europe">Europe</option>
+        <option value="Oceania">Oceania</option>
+    </select>
+    <select onchange="Sort()">
+        <option value="LTH">LTH</option>
+        <option value="HTL">HTL</option>
+    </select>
+    <div id="cont"></div>
 </body>
-<script>
-    
-</script>
 </html>
+<script>
+    let url = "https://restcountries.com/v3.1/all";
+
+    let data =[];
+    async function Data() {
+        try{
+            let result = await fetch(url);
+            let output = await result.json();
+            // console.log(output);
+            data = output; // data = [...output]
+            display(output);
+
+            }
+        catch (error) {
+            alert(error);
+            }
+        }
+
+    Data();
+
+    function Regions(){
+        let selected = document.querySelector("select").value;
+        // console.log(selected);
+        
+        let filtered = data.filter(function(elem){
+            return elem.region == selected;
+        });
+        console.log(filtered);
+        display(filtered);
+    }
+
+    function Sort(){
+            let selected = document.querySelector("select").value;
+            if(selected == "HTL"){
+                data.sort((a,b) => b.population - a.population);
+            }
+            if(selected == "LTH"){
+                data.sort(function(a,b){
+                   return  a.population - b.population
+                });
+            }
+            console.log(data);
+            display(data);
+        }
+
+
+    function display(output){
+        // console.log(output);
+
+        document.querySelector("#cont").innerHTML = "";
+
+        output.forEach(function(elem){
+
+           let div = document.createElement("div");
+           
+           let country = document.createElement("h2");
+           country.innerText = elem.name.common;
+
+           let image = document.createElement("img");
+           image.setAttribute("src",elem.flags.png)
+
+           let population = document.createElement("p");
+            population.innerText = elem.population;
+
+           let region = document.createElement("p");
+           region.innerText = elem.region;
+
+           let capital = document.createElement("p");
+           capital.innerText = elem.capital;
+
+           div.append(image,country,population,region,capital);
+
+           document.querySelector("#cont").append(div);
+        });
+
+    }
+</script>
