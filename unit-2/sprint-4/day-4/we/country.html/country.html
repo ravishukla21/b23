@@ -73,11 +73,12 @@
     function Regions(){
         let selected = document.querySelector("select").value;
         // console.log(selected);
+        console.log(data)
         
         let filtered = data.filter(function(elem){
             return elem.region == selected;
         });
-        console.log(filtered);
+        //console.log(filtered);
         display(filtered);
     }
 
