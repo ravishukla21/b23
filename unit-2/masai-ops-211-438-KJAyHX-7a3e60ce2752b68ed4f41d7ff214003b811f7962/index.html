@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Country Finder</title>
+  <style>
+    /* Write all necessery css here  */
+    #all_countries {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: auto;
+      gap: 20px;
+
+    }
+    select{
+      margin-left:600px
+    }
+
+  </style>
+</head>
+
+<body>
+  <select onchange="sort()" id="sort_population">
+    <option value="">Sort By Population</option>
+    <option value="asc">ASC</option>
+    <option value="desc">DESC</option>
+  </select>
+  <br>
+  <select onchange="region()" id="filter_region">
+    <option value="">Filter By Region</option>
+    <option value="Africa">Africa</option>
+    <option value="Americas">Americas</option>
+    <option value="Asia">Asia</option>
+    <option value="Europe">Europe</option>
+    <option value="Oceania">Oceania</option>
+  </select>
+  <div id="all_countries">
+    <!-- Append Country Cards here  -->
+  </div>
+</body>
+<script>
+  // Write all necessery JS here
+  let data = []
+  var out=[]
+  let url = "https://restcountries.com/v3.1/all"
+  async function getdata() {
+    try {
+      let res = await fetch(url);
+      var out = await res.json();
+      data = out
+
+      console.log(out)
+      out=out
+      displaycard(out)
+    }
+    catch (err) {
+      console.log("error")
+    }
+
+  }
+  getdata()
+  function sort() {
+    console.log("change")
+    let selected = document.querySelector("#sort_population").value;
+    console.log(selected)
+    if (selected == "desc") {
+      data.sort((a, b) => b.population - a.population);
+      displaycard(data)
+    }
+    else if (selected == "asc") {
+      data.sort((a, b) => a.population - b.population);
+      displaycard(data)
+    }
+    else if (selected == "all") {
+      //data.sort((a, b) => a.population - b.population);
+      
+      
+     
+    }
+
+
+  }
+  function region() {
+    let selected = document.querySelector("#filter_region").value;
+    console.log(selected)
+
+    let filtered_data = data.filter(function (out) {
+      return out.region == selected
+    })
+    console.log(filtered_data)
+
+
+    displaycard(filtered_data)
+  }
+
+  function displaycard(out) {
+    document.querySelector("#all_countries").innerHTML = ""
+    console.log(out)
+    out.forEach(out => {
+      let div = document.createElement("div")
+      let image = document.createElement("img")
+      image.setAttribute("src", out.flags.png)
+      let title = document.createElement("h2")
+      title.innerHTML = out.name.common
+      let pop = document.createElement("h4")
+      pop.innerHTML = "Population :" + " " + out.population
+      let region = document.createElement("h4")
+      region.innerHTML = "Region :" + " " + out.region
+      let capital = document.createElement("h4")
+      capital.innerHTML = "Capital :" + " " + out.capital
+      div.append(image, title, pop, region, capital)
+      document.querySelector("#all_countries").append(div);
+
+    });
+
+  }
+</script>
+
+</html>
