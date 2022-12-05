@@ -161,30 +161,29 @@ let inputArray = [
 
 // 2. You need to code it.
 let outputArray = inputArray.map((item) => {
+
   let obj = {};
   obj["productID"] = item.idMeal;
   obj["productTitle"] = item.strMeal;
   obj["Category"] = categoriesDrectory[item.Category];
   obj["Area"] = areasDirectory[item.Area];
-
-  obj['Ingredients'] =[];
+  obj["Ingredients"] = [];
   //item["strIngredient1"] && obj["Ingredients"].push({ ingredient: item["strIngredient1"], measure: item["strMeasure1"] });
-
-
-
   for (let i = 1; i <= 20; i++) {
-   
-    item[`strIngredient ${i}`]  && obj['Ingredients'].push ({ ingredient: item[`strIngredient ${i}`], measure: toString(item[`strMeasure ${i}`]) });
-   
-
+    if (item[`strIngredient${i}`]) {
+      obj["Ingredients"].push({
+        ingredient: item[`strIngredient${i}`],
+        measure: item[`strMeasure${i}`]
+      });
+    }
   }
 
-
   return obj;
-})
+});
 //console.log(outputArray);
 console.log((outputArray))
 //console.log(JSON.stringify(outputArray))
+
 
 
 

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="print_image">
+    </div>
+    
+</body>
+<script>
+    let productsProm = fetch('https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-products');
+
+// store the data in a variable
+// try to render it in the DOM
+// title
+// image
+// price
+
+productsProm
+  .then((response) => {
+    return response.json()
+  })
+  .then((data) => {
+   // console.log(data)
+   data=data.data
+  displayimage(data)
+  })
+function displayimage(data){
+  //console.log(data.data)
+  data.forEach(ky => {
+     console.log(ky)
+    let maindiv=document.createElement("div");
+    let image=document.createElement("img");
+     image.setAttribute("src",ky.image);
+    let brand=document.createElement("h1");
+    brand.innerText=ky.brand;
+     let title=document.createElement("h1");
+    title.innerText=ky.title;
+    let price=document.createElement("h1");
+    price.innerText=ky.price;
+    maindiv.append(image,brand,title,price) ;
+    document.querySelector("#print_image").append(maindiv)  ;
+    
+  });
+  
+   
+  
+}
+
+
+</script>
+</html>
