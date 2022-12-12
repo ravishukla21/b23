@@ -14,6 +14,7 @@ let students = [
 ]
 
 
+
 let newObj = students.reduce(function (acc, item) {
   if (acc[item.name] == undefined) {
     acc[item.name] = []
@@ -26,10 +27,10 @@ let newObj = students.reduce(function (acc, item) {
 
 
 }, {})
-console.log("1111111111111111");
+// console.log("1111111111111111");
 
-console.log(newObj);
-console.log("1111111111111111");
+// console.log(newObj);
+// console.log("1111111111111111");
 
 /* 
 ----------------------------------

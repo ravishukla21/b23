@@ -14,7 +14,10 @@ let subjectsHash = {
   ]
   
   
-  let newObj = {/* your code here */}
+  let newObj = students.reduce((acc,item)=>{
+    return acc
+
+  },{})
   
   console.log(newObj);
   
