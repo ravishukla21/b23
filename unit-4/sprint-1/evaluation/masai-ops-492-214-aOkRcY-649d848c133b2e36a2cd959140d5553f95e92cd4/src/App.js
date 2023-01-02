@@ -15,7 +15,7 @@ export default function App() {
 
       </div>
       <div>
-        <UserCard />
+        <UserCard  avatar={"http.hello.com"} name={"Chrisse"} address={"4018 Sachs Trail"} posts={1841} followers={66868}/>
 
       </div>
       <div>
