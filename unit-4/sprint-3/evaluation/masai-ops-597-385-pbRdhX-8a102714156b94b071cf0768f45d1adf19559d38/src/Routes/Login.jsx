@@ -1,11 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { AuthContext } from "../Context/AuthContext";
+
 
 
 function Login() {
-  const val=React.useContext(AuthContext)
-  console.log(val)
+  
   return (
     <div className="login-page">
       <form className="form" data-testid="login-form">
