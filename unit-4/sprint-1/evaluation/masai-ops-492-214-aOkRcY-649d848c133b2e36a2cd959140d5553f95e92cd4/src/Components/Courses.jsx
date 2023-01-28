@@ -24,20 +24,20 @@ export default function Courses() {
                     </ul>
 
                 </li>
-                
-               
-             
-           
+
+
+
+
 
                 <li> Data Analytics
-                <ul>
+                    <ul>
                         <li>Eligibility: 18-28yrs</li>
                         <li>Duration: 30 weeks</li>
                     </ul>
 
                 </li>
-               
-               
+
+
             </ol>
 
 
