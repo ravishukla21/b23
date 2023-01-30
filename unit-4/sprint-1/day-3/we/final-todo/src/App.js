@@ -13,13 +13,13 @@ function App() {
 
     sethandleclick(newarray)
     setText("")
-   // console.log(text)
+    console.log(text)
     console.log(handleclick,"tiy")
   
   }
   console.log(handleclick,"hi")
 
-  // let jigra=handleclick.map((el)=>{return <h1>{el}</h1>})
+  let jigra=handleclick.map((el)=>{return <h1>{el}</h1>})
   return (
 
    
@@ -27,7 +27,7 @@ function App() {
       <input onChange={hello123} value={text} />
       <button onClick={onClick} >ADD</button>
       <div>
-        {/* {jigra} */}
+        {jigra}
       </div>
 
     </div>
