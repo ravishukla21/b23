@@ -1,6 +1,6 @@
 import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
+// import { useEffect } from "react";
+import { useState,useEffect } from "react";
 import SearchResults from "./SearchResults";
 
 
@@ -64,8 +64,11 @@ function FlightSearch() {
 
   return (
     <div>
-      <div></div>
       <div>
+
+      </div>
+      <div>
+
         <section>
           <h4>Flight Search</h4>
           <br />
