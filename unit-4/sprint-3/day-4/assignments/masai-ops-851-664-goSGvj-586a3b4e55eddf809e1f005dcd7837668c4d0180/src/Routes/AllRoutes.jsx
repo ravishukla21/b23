@@ -5,6 +5,7 @@ import Contact from '../Pages/Contact'
 import Login from "../Pages/Login"
 import About from "../Pages/About"
 import Products from "../Pages/Products"
+import PrivateRoute from './PrivateRoute'
 
 const AllRoutes = () => {
     return (
