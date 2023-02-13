@@ -1,8 +1,16 @@
 import AuthContextProvider from "../Context/AuthContext";
+import React from 'react'
+import {useContext} from "react"
+// import { AuthContext } from '../Context/AuthContextProvider'
+import { Navigate } from 'react-router-dom'
 function Login() {
+  const {isAuth,login}=useContext(AuthContext)
+    if(isAuth){
+        return <Navigate to="/"/>
+    }
   return (
     <div>
-      <form data-testid="login-form">
+      <form data-testid="login-form" onSubmit={login}>
         <div>
           <label>
             Email
