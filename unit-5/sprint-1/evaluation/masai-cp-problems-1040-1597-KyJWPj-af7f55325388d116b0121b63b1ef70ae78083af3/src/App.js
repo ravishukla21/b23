@@ -3,7 +3,7 @@ import { useToggleItems } from "./hooks/useToggleItems";
 
 
 function App() {
-  const [state, toggleState] = useToggleItems(["A", "B", "C"], 1);
+  const [state, toggleState] = useToggleItems(["A", "B", "C"], 0);
   return (
     <div className="App">
       <h1>Custom Hooks</h1>
