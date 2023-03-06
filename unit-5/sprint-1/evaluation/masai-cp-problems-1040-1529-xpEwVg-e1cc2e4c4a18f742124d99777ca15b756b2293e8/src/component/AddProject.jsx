@@ -67,7 +67,7 @@ export const AddProject = () => {
     e.preventDefault();
     const newlist = [...submittedData, { ...data }]
     setSubmittedData(newlist)
-    dispatch({ type: "RESET", payload: " " })
+    dispatch({ type: "RESET" })
 
 
 
@@ -92,6 +92,7 @@ export const AddProject = () => {
             {/* Provide select tag with name attribute `name="tech_stack"` */}
             {/* This Select Tag will have `data-testid="tech-stack-select` */}
             <select name="tech_stack" data-testid="tech-stack-select" onChange={(e) => dispatch({ type: "TECH_STACK", payload: e.target.value })}>
+            <option value="">-----</option>
               <option value="react">React</option>
               <option value="node">Node</option>
               <option value="java">Java</option>
@@ -112,6 +113,7 @@ export const AddProject = () => {
             {/* Provide select tag with name attribute `name="assigned_to"` */}
             {/* This Select Tag will have `data-testid="assigned-to-select` */}
             <select name="assigned_to" data-testid="assigned-to-select" onChange={(e) => dispatch({ type: "ASSIGNED_TO", payload: e.target.value })}>
+            <option value="">-----</option>
               <option value="nrupul">Nrupul</option>
               <option value="albert">Albert</option>
               <option value="aman">Aman</option>
@@ -129,7 +131,7 @@ export const AddProject = () => {
             <input type={"checkbox"} onClick={handleCheck123} />
 
           </div>
-          <button>SUBMIT</button>
+          <button  >SUBMIT</button>
         </form>
       </div>
       <h1>Project List</h1>
@@ -147,17 +149,19 @@ export const AddProject = () => {
 
 
        {submittedData?.map((el) => {
-        return  <ProjectList name={el.name} tech_stack={el.tech_stack} assigned_to={el.assigned_to} currentstatus={el.status}
+        return  <ProjectList id={submittedData.length} name={el.name} tech_stack={el.tech_stack} assigned_to={el.assigned_to} currentstatus={el.status}
 
 
            />
        })}
+
 
        {/* {submittedData?.map((el) => {
       // //  
       // //     return <ProjectList name={el.name} tech_stack={el.tech_stack} assigned_to={el.assigned_to} currentstatus={el.status} */}
 
     </div>
+
   );
 };
 
