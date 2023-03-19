@@ -7,7 +7,6 @@ import EmployeeData from "../Components/EmployeeData"
 
 const AllRoutes = () => {
     return (
-        <div>
             <Routes>
 
                 <Route path="/coffee-data" element={<CoffeeData/>}>
@@ -20,9 +19,6 @@ const AllRoutes = () => {
 
                 </Route>
             </Routes>
-
-
-        </div>
     )
 }
 
