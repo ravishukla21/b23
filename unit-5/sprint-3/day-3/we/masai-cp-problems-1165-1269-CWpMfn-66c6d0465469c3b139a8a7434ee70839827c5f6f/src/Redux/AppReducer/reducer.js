@@ -1,4 +1,4 @@
-import * as types from "./actionType";
+
 import { GETCOFFEEDATA,GETEMPLOYEEDATA,GETRESTAURANTDATA } from "./actionType";
 
 const initialState = {

@@ -8,10 +8,23 @@ const urlrest="https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/g
 //   - Employee Data:  ```https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-employees```
 //   - Restaurant Data:  ```https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/getrestaurants```
 
+const getCoffeeAction = (payload) =>{
+    return {type:GETCOFFEEDATA,payload}
+}
+
+ const getEmployeeAction = (payload) =>{
+    return {type:GETEMPLOYEEDATA,payload}
+}
+
+const getRestaurantsAction = (payload) =>{
+    return {type:GETRESTAURANTDATA,payload}
+}
+
+
 export const getcoffeedata=(dispatch)=>{
     axios.get(urlcoffee).then((res)=>{
         console.log(res.data,"coffee")
-    dispatch({type:GETCOFFEEDATA,payload:res.data.data})
+    dispatch(getCoffeeAction(res.data.data))
    
      }
     
@@ -24,7 +37,7 @@ export const getcoffeedata=(dispatch)=>{
 export const getemployeedata=(dispatch)=>{
     axios.get(urlemp).then((res)=>{
         console.log(res.data,"emp")
-    dispatch({type:GETEMPLOYEEDATA,payload:res.data.data})
+    dispatch(getEmployeeAction(res.data.data))
    
      }
     
@@ -36,7 +49,7 @@ export const getemployeedata=(dispatch)=>{
 export const getrestaurantdata=(dispatch)=>{
     axios.get(urlrest).then((res)=>{
         console.log(res.data,"resst")
-    dispatch({type:GETRESTAURANTDATA,payload:res.data.data})
+    dispatch(getRestaurantsAction(res.data.data))
    
      }
     

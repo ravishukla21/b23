@@ -12,7 +12,7 @@ export default function CoffeeData() {
   },[])
  
 	console.log(coffeeData,"store1coffee")
-  let coffeemap=coffeeData
+ 
   
   return (
    <div>
