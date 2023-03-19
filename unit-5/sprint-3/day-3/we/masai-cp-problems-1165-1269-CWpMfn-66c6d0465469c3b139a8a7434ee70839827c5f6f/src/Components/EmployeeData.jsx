@@ -16,7 +16,7 @@ export default function EmployeeData() {
 			<h2>Employee Data</h2>
 			<div className="employee_data_cont">
 				{/* Map the below div against yoru employee data */}
-				{employeeData?.data?.map((el)=>{
+				{employeeData?.map((el)=>{
 					return <div className="employee" style={{ width: "250px" }}>
 					<img className="image" alt="img" width="70%" src={el.image}/>
 					<div className="name"> {el.name}</div>

@@ -18,7 +18,7 @@ export default function CoffeeData() {
    <div>
      <h2 >Coffee Data</h2>
       <div className = "coffee_data_cont" >
-        {coffeeData?.data?.map((el)=>{
+        {coffeeData?.map((el)=>{
           return  <div className = "coffee-item" key={el.id} >
           <img className = "image" alt = "img" width = "70%" src={el.image}/>
           <div className = "title">{el.title} </div>

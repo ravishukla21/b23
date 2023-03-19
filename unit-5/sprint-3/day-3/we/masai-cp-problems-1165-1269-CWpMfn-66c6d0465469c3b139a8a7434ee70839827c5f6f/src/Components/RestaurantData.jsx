@@ -14,7 +14,7 @@ export default function RestaurantData() {
 			<h2> Restaurant Data </h2>
 			<div className="restaurant_data_cont">
 				{/* Map the below div against your restaurant Data */}
-				{restaurantData?.data?.map((el)=>{
+				{restaurantData?.map((el)=>{
 					return 	<div className="restaurant_item">
 					<img className="image" alt="img" width="70%" src={el.image} />
 					<div className="name"> {el.name}</div>
