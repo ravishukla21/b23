@@ -7,6 +7,9 @@ export default function CoffeeData() {
 
   const dispatch= useDispatch();
   const {coffeeData}=useSelector((store)=>store);
+
+
+  console.log("hello")
   useEffect(()=>{
     dispatch(getcoffeedata)
   },[])

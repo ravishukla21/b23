@@ -11,13 +11,13 @@ const initialState = {
 const reducer = (state = initialState,{type,payload}) => {
   switch(type){
     case GETCOFFEEDATA:
-      return {...state,coffeeData:payload}
+      return {...state,coffeeData:payload};
     case GETEMPLOYEEDATA:
-      return {...state,employeeData:payload}
+      return {...state,employeeData:payload};
     case GETRESTAURANTDATA:
-      return {...state,restaurantData:payload}
+      return {...state,restaurantData:payload};
     default:
-    return state
+    return state;
 
   }
  

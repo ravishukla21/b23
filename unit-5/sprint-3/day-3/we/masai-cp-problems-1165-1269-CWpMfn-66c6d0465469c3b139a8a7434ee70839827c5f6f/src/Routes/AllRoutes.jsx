@@ -8,22 +8,23 @@ import EmployeeData from "../Components/EmployeeData"
 const AllRoutes = () => {
     return (
         <div>
-             <Routes>
-                <Route path="/coffee-data" element={<CoffeeData/>}>
-
-                </Route>
-                <Route path="/restaurant-data" element={<RestaurantData />}>
+            <Routes>
+                <Route path="/coffee-data" element={<CoffeeData />}>
 
                 </Route>
                 <Route path="/employee-data" element={<EmployeeData />}>
 
 
                 </Route>
-                
+                <Route path="/restaurant-data" element={<RestaurantData />}>
+
+                </Route>
+
+
             </Routes>
 
         </div>
-           
+
     )
 }
 
