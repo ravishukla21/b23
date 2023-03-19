@@ -16,8 +16,11 @@ const reducer = (state = initialState,{type,payload}) => {
       return {...state,employeeData:payload}
     case GETRESTAURANTDATA:
       return {...state,restaurantData:payload}
+    default:
+    return state
+
   }
-  return state
+ 
 };
 
 export { reducer };

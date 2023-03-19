@@ -8,7 +8,6 @@ import EmployeeData from "../Components/EmployeeData"
 const AllRoutes = () => {
     return (
             <Routes>
-
                 <Route path="/coffee-data" element={<CoffeeData/>}>
 
                 </Route>
@@ -17,7 +16,9 @@ const AllRoutes = () => {
                 </Route>
                 <Route path="/employee-data" element={<EmployeeData />}>
 
+
                 </Route>
+                
             </Routes>
     )
 }
