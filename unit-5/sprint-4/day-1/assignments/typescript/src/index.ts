@@ -41,3 +41,48 @@ const ok12:amitabhsrivastava={
 
 
 const hek=[1,2,3]
+
+//type name with string
+let a:string="ravi";
+
+let first_name:string="masai";
+let last_name:string="school";
+// type age with number
+let ab:number=56;
+
+//type isFetching
+let isFetching:boolean=true;
+
+//array of numbers
+
+let numarray:number[]=[1,2,3,4];
+
+let arr000000:Array<number>=[1,2,3,4]
+
+
+//array of string
+
+let strArray:string[]=["a","b","c","d"]
+
+//objects
+
+type Data={id:number;
+
+name:string;}
+
+
+let person:Data={
+    id:5,
+    name:"ravi"
+}
+
+//company//tuple
+let tuple: [number, string, boolean] = [7, "hello", true];
+
+//
+
+
+
+
+
+
