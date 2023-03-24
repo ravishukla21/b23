@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 
 function App() {
   
-  const [counter,setcounter]=useState<number>(||0);
+  const [counter,setcounter]=useState<number>( Number(localStorage.getItem("counter"))||0);
   const handleClick=(e:React.MouseEvent<HTMLButtonElement>)=>{
-    console.log(e,"e")
+
+   
     setcounter(counter+1)
     
    console.log("hello",counter);
