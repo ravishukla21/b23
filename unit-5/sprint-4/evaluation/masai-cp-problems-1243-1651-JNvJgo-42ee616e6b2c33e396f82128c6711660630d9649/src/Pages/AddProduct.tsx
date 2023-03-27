@@ -59,8 +59,8 @@ export const AddProduct = () => {
   return (
     <div>
       <Navbar />
-      {/* addproduct */}
-      <form  onSubmit={handleSubmit} >{/* Add all fields here to take product input */}
+     
+      <form  onSubmit={handleSubmit} >
         <input type="text" className="product-name" placeholder="Product Name" name="name" value={formState.name} onChange={handleChange}/>
         <br />
         <input type="text" className="product-image" placeholder="Product Image" name="image" value={formState.image}  onChange={handleChange}/>
