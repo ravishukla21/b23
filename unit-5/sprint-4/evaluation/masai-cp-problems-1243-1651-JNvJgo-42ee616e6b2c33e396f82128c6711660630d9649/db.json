@@ -62,6 +62,24 @@
       "like": 0,
       "dislike": 0,
       "id": 7
+    },
+    {
+      "name": "RAVI",
+      "brand": "45694",
+      "price": 789787,
+      "image": "sumit",
+      "like": 0,
+      "dislike": 0,
+      "id": 8
+    },
+    {
+      "name": "e",
+      "brand": "45",
+      "price": 98979,
+      "image": "e",
+      "like": 0,
+      "dislike": 0,
+      "id": 9
     }
   ]
 }

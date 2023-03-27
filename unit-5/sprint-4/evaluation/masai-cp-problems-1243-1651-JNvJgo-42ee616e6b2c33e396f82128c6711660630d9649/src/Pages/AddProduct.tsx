@@ -58,7 +58,7 @@ export const AddProduct = () => {
  
   return (
     <div>
-      <Navbar />
+      <Navbar aaa="Add Product Page" />
      
       <form  onSubmit={handleSubmit} >
         <input type="text" className="product-name" placeholder="Product Name" name="name" value={formState.name} onChange={handleChange}/>

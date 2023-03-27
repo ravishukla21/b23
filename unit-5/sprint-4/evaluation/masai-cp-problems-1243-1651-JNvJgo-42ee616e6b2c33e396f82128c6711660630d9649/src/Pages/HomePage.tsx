@@ -5,7 +5,7 @@ import ProductList from "../Components/ProductList";
 export const HomePage = () => {
   return (
     <div>
-      <Navbar />
+      <Navbar  aaa="Home Page"/>
       <ProductList />
     </div>
   );

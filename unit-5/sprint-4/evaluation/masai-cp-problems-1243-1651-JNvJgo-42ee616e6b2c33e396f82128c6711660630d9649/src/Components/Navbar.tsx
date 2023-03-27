@@ -1,7 +1,10 @@
 import React from "react";
 
 // accept the page name as prop here
-export const Navbar = () => {
+interface abc{
+  aaa:string;
+} 
+export const Navbar = ({aaa}:abc) => {
   return (
     <div>
       <h2>Product List</h2>
@@ -11,7 +14,7 @@ export const Navbar = () => {
       <a className="add-product-link" href="/add-product">
         Add Product
       </a>
-      <h3 data-testid="page-name">{/* Show Correct page name here */}</h3>
+      <h3 data-testid="page-name">{aaa}</h3>
     </div>
   );
 };
