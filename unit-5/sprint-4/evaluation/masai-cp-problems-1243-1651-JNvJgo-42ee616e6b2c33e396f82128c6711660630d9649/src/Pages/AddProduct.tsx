@@ -62,13 +62,13 @@ export const AddProduct = () => {
      
       <form  onSubmit={handleSubmit} >
         <input type="text" className="product-name" placeholder="Product Name" name="name" value={formState.name} onChange={handleChange}/>
-        <br />
+        
         <input type="text" className="product-image" placeholder="Product Image" name="image" value={formState.image}  onChange={handleChange}/>
-        <br />
+        
         <input type="text" className="product-brand" placeholder="Product Brand" name="brand" value={formState.brand}  onChange={handleChange}/>
-        <br />
+       
         <input type="number" className="product-price" placeholder="0" name="price" value={formState.price} onChange={handleChange}/>
-        <br />
+       
         <button type="submit" className="submit-form">Add Product
 
         </button>
