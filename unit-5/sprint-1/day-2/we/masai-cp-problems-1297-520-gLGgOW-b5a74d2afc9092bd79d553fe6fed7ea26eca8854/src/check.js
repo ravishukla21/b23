@@ -9,7 +9,7 @@ const initialState = {
 //should have the cases "email", "password", and "reset", along with the default cases
 const reducer = (state, action) => {
   switch(action.type){
-  case "email":{
+  case "USEREMAIL":{
     return {
       ...state,
      
@@ -17,14 +17,14 @@ const reducer = (state, action) => {
      
     }
   }
-  case  "password":{
+  case "USERPASSWORD":{
     return {
       ...state,
     
       password:action.payload
     }
   }
-  case "reset":{
+  case "SUBMIT":{
     return initialState
   }
   default:
@@ -47,7 +47,7 @@ function App() {
     }else{
       setshow(true)
     }
-    dispatch({type:"reset"})
+    dispatch({type:"SUBMIT"})
 
   }
   console.log(data,"dataaa")
@@ -58,21 +58,21 @@ function App() {
       <form className="form-wrapper" data-testid="form-wrapper" onSubmit={handlesubmit}>
         <div className="useremail-wrapper">
           <label>User Email</label>
-          <input type="email" data-testid="user-email" value={data.email} onChange={(e)=>dispatch({type:"email",payload:e.target.value})}/>
+          <input type="email" data-testid="user-email" value={data.email} onChange={(e)=>dispatch({type:"USEREMAIL",payload:e.target.value})}/>
         </div>
         <div className="userpassword-wrapper">
           <label>User Password</label>
-          <input type="password" data-testid="user-password" value={data.password}  onChange={(e)=>dispatch({type:"password",payload:e.target.value})}/>
+          <input type="password" data-testid="user-password" value={data.password}  onChange={(e)=>dispatch({type:"USERPASSWORD",payload:e.target.value})}/>
         </div>
         <button type="submit">Submit</button>
       </form>
 
       {/* IF there is data in the submittedData variable after submitting the form, show the data here ELSE show the No details found div. */}
-
-     {show?<div data-testid="no-details-container">{show && "no details found" }</div>:<div>
-     <div data-testid="submitted-data-email">User Email:{submittedData.email}</div>
-     <div data-testid="submitted-data-password">User Password:{submittedData.password}</div>
-   </div> }
+      {show? <div>
+        <div data-testid="submitted-data-email">User Email:{submittedData.email}</div>
+        <div data-testid="submitted-data-password">User Password:{submittedData.password}</div>
+      </div>: <div data-testid="no-details-container">{show && "no details found" }</div>}
+     
 
      
     </div>
