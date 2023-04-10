@@ -12,8 +12,12 @@ export default Input;
   type:PropTypes.string.isRequired,
   size:PropTypes.string.isRequired,
   variant:PropTypes.string.isRequired,
-  value:PropTypes.string.isRequired,
+
+
+
+ 
   onChange:PropTypes.string.isRequired,
+  value:PropTypes.string.isRequired,
 
   
   }
