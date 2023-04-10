@@ -19,11 +19,11 @@
  ✅ Check if the button has 'Dark' text and NO "dark-mode" classname present on app-component by default - 2 mark
  ✅ Check if the button text was changing from Dark to Light and vice-versa on changing the theme - 1 mark
  ✅ Check if the theme was persisting even with page refresh - 1 mark
- ✅ should render the UserCard component in the UI  - 1 mark
- ✅ should have the proptypes defined for UserCard with "name" prop as `isRequired` - 1 mark
+ ✅ should render the UserCard component in the UI  - 1 mark   =====
+ ✅ should have the proptypes defined for UserCard with "name" prop as `isRequired` - 1 mark  
  ✅ should use the default value of description, backgroundColor as className, imageURL and title from props - 4 marks
  ✅ should render the UserCard with the default className of 'round' as a value of avatarShape for userimage - 2 mark
- ✅ should render the Input component with the proptypes defined, with variant props as `isRequired` - 2 mark
+ ✅ should render the Input component with the proptypes defined, with variant props as `isRequired` - 2 mark ==
  ✅ should render the Input component in the UI - 1 mark
  ✅ should use values of size, and variant props as classNames - 2 mark
  ✅ should show the typed value of the input box, inside the app.js input-value div - 1 mark

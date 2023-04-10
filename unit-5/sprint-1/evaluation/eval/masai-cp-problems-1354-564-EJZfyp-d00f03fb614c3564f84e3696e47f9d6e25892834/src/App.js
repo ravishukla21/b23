@@ -9,7 +9,7 @@ function App() {
 
   const [isDarkMode, toggleDarkMode] = useDarkMode();
   let name="User1";
-  let imageURL="abcd";
+  let imageURL="https://images.unsplash.com/photo-1485893086445-ed75865251e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fHBlb3BsZXxlbnwwfDJ8MHx8&auto=format&fit=crop&w=1400&q=60";
   let avatarShape="round";
   let description="Testing Description";
   let backgroundColor="red";

@@ -8,13 +8,13 @@ const useDarkMode = () => {
       settoggle(!isDarkMode);
     
     }
-    if(isDarkMode){
-      document.body.classList.remove("dark-mode")
+    // if(isDarkMode){
+    //   document.body.classList.remove("dark-mode")
   
-    }else{
-      document.body.classList.add("dark-mode")
+    // }else{
+    //   document.body.classList.add("dark-mode")
   
-    }
+    // }
 
     return [isDarkMode,toggleDarkMode]
 
