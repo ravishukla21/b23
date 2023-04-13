@@ -6,6 +6,8 @@ import TodoInput from "./TodoInput";
 const Todos = () => {
   const [data, setdata] = useState([])
   const url = `http://localhost:${process.env.REACT_APP_JSON_SERVER_PORT}/todos`
+
+
   useEffect(() => {
     axios.get(url).then((res) => {
       console.log(res.data, "resdata")
@@ -13,7 +15,10 @@ const Todos = () => {
 
     })
   }, [])
+
+
   console.log(data, "dataindata")
+
 
   const handleclick = (adddata) => {
     console.log(adddata, "adddata")
@@ -38,7 +43,9 @@ const Todos = () => {
       {/* add TodoInput component here */}
       <TodoInput handleclick123={handleclick} />
       {/* map through the todos array and display the tasks */}
-      {data?.map((el, index) => { return <div data-testid="todos-wrapper" key={index}>{el.title}-{el.status ? "True" : "False"}   </div> })}
+      <div data-testid="todos-wrapper" >
+      {data?.map((el, index) => { return <div key={index}>{el.title}-{el.status ? "True" : "False"}   </div> })}
+      </div>
     </div>
   );
 };
