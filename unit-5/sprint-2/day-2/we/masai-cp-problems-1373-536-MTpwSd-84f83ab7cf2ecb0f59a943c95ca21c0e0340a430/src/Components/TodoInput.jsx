@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 
-const TodoInput = () => {
+const TodoInput = ({handleclick}) => {
+    // console.log(props,"propshandleclick")
+//    {handleclick}=props
 
     // {
     //     "id": 1,
@@ -12,25 +14,28 @@ const TodoInput = () => {
         status: false
     }
 
-    let [data, setdata] = useState(object12)
-    const {title,status}=data;
+    let [adddata, setadddata] = useState(object12)
+    const {title,status}=adddata;
 
 
     const handleChange = (e) => {
        
        const {name,value}=e.target;
 
-        setdata({...data,[name]:value})
+        setadddata({...adddata,[name]:value})
 
     }
-    const handleclick = () => {
-        console.log(data, "onbuttonpresss")
-    }
+    // const handleclick = () => {
+    //     console.log(adddata, "onbuttonpresss")
+    //     return adddata;
+
+    // }
+    console.log(adddata,"adddataa13135515")
     return (
         <div>
 
             <input data-testid = "todo-input" type="text" name="title" value={title} onChange={handleChange} />
-            <button  data-testid ="add-button"  onClick={handleclick}>Add Todo</button>
+            <button  data-testid ="add-button"  onClick={()=>handleclick(adddata)}>Add Todo</button>
 
         </div>
     )
