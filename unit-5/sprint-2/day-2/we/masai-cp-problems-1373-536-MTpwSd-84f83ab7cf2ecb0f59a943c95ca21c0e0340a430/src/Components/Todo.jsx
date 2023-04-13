@@ -19,7 +19,7 @@ const Todos = () => {
     console.log(adddata, "adddata")
     axios.post(url, adddata).then(res => {
       console.log("res.data", res.data)
-      setdata([...data, res.data])
+      return setdata([...data, res.data])
 
     })
   }
@@ -36,9 +36,9 @@ const Todos = () => {
   return (
     <div>
       {/* add TodoInput component here */}
-      <TodoInput handleclick={handleclick} />
+      <TodoInput handleclick123={handleclick} />
       {/* map through the todos array and display the tasks */}
-      {data?.reverse().map((el, index) => { return <div data-testid="todos-wrapper" key={index}>{el.title}-{el.status ? "True" : "False"}   </div> })}
+      {data?.map((el, index) => { return <div data-testid="todos-wrapper" key={index}>{el.title}-{el.status ? "True" : "False"}   </div> })}
     </div>
   );
 };
