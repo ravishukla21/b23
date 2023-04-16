@@ -10,7 +10,7 @@ import axios from "axios";
 export const postTodos = (task) => (dispatch) => {
     console.log(task,"task123")
     dispatch(addtodorequestaction());
-    axios.post("http://localhost:8080/todos", task).then((res) => {
+    axios.post(`http://localhost:${process.env.REACT_APP_JSON_SERVER_PORT}/todos`, task).then((res) => {
         dispatch(addtodosuccessaction(res.data))
         console.log(res.data, "res.data.data")
 
@@ -24,7 +24,7 @@ export const postTodos = (task) => (dispatch) => {
 
 export const sideeffects = () => (dispatch) => {
     dispatch(gettodorequestaction())
-    axios.get("http://localhost:8080/todos").then(res => {
+    axios.get(`http://localhost:${process.env.REACT_APP_JSON_SERVER_PORT}/todos`).then(res => {
         dispatch(gettodosuccessaction(res.data))
         console.log(res.data, "res.data")
     }).catch(() => dispatch(gettodoerrorstatus()))
