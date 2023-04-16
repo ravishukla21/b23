@@ -13,8 +13,8 @@ const TodoList = () => {
     <div data-testid='todo-list-wrapper'>
 
       {/* map all the "individual/single" todo inside this div. */}
-      <div  >
-      {isLoading?"...loading":isError?"...404 error":todos?.map((el,index)=><div data-testid="single-todo" key={index}> <h1>{el.title}--{el.status?"True":"False"}</h1> </div>)}
+      <div data-testid="single-todo" >
+      {isLoading?"...loading":isError?"...404 error":todos?.map((el,index)=><div  key={index}> <h1>{el.title}--{el.status?"True":"False"}</h1> </div>)}
       
 
      
