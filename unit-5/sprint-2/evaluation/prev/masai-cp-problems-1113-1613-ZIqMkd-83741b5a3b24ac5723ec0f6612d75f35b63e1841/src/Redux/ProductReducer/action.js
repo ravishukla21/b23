@@ -1,12 +1,19 @@
 import axios from "axios";
 import { GET_PRODUCT_REQUEST,GET_PRODUCT_SUCCESS,GET_PRODUCT_FAILURE } from "./actionTypes";
-let asc="asc"
+
 export const getProducts =(value13="")=> (dispatch) => {
   console.log(value13,"value13")
+  let discount=""
+  if(value13){
+    discount="discountPercentage"
+  }else{
+    discount=""
+  }
+
   // console.log(props,"props")
   // Complete get products functionality here
   dispatch(getproductrequestaction());
-  axios.get(`http://localhost:${process.env.REACT_APP_JSON_SERVER_PORT}/products?_sort=discountPercentage&_order=${value13}`).then(
+  axios.get(`http://localhost:${process.env.REACT_APP_JSON_SERVER_PORT}/products?_sort=${discount}&_order=${value13}`).then(
     (res)=>{console.log(res.data,"res.dataproductreducer")
     dispatch(getproductsuccessaction(res.data))
   
