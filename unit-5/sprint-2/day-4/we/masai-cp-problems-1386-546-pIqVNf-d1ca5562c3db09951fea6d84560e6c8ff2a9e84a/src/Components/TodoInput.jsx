@@ -4,7 +4,7 @@ import React, { useState } from "react";
 //make a POST request (by dispatching the function), to save the data in db.json
 //make a GET request (by dispatching the function), if the post request is successful, by chaining them together
 import { useDispatch, useSelector } from "react-redux/es/exports";
-import { addtodosuccessaction } from "../Redux/action";
+import { addtodoerrorstatus, addtodorequestaction, addtodosuccessaction, gettodorequestaction } from "../Redux/action";
 const TodoInput = () => {
   const dispatch = useDispatch();
   // const store = useSelector(store => store)
@@ -20,13 +20,14 @@ const TodoInput = () => {
     console.log(task, "taskinside")
    
     const postTodos=() => {
+      dispatch(addtodorequestaction())
       axios.post("http://localhost:8080/todos", task).then((res) => { 
         dispatch(addtodosuccessaction(res.data))
-        return  console.log(res.data,"res.data.data")
+        console.log(res.data,"res.data.data")
     
       
     
-    }).then(()=>console.log("errorcatch"))
+    })
     }
     postTodos();
   

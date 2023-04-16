@@ -14,7 +14,8 @@ const TodoList = () => {
 
       {/* map all the "individual/single" todo inside this div. */}
       <div  >
-      {todos?.map((el,index)=><div data-testid="single-todo" key={index}> <h1>{el.title}--{el.status?"True":"False"}</h1> </div>)}
+      {isLoading?"...loading":isError?"...404 error":todos?.map((el,index)=><div data-testid="single-todo" key={index}> <h1>{el.title}--{el.status?"True":"False"}</h1> </div>)}
+      
 
      
 
