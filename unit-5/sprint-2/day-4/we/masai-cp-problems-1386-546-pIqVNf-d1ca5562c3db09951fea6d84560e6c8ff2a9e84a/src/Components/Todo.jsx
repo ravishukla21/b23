@@ -13,17 +13,8 @@ const Todo = () => {
  
   
 
-  const sideeffects=()=>{
-    dispatch(gettodorequestaction())
-    axios.get("http://localhost:8080/todos").then(res=>{
-      dispatch(gettodosuccessaction(res.data))
-      console.log(res.data,"res.data")
-    }).catch(()=>dispatch(gettodoerrorstatus()))
-    
-  }
-  useEffect(()=>{
-     sideeffects();
-  },[])
+
+ 
   return (
     <div>
       <h1>Todos</h1>

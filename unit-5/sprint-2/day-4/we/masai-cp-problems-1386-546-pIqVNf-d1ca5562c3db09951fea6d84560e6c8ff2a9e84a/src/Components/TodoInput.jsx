@@ -5,6 +5,8 @@ import React, { useState } from "react";
 //make a GET request (by dispatching the function), if the post request is successful, by chaining them together
 import { useDispatch, useSelector } from "react-redux/es/exports";
 import { addtodoerrorstatus, addtodorequestaction, addtodosuccessaction, gettodorequestaction } from "../Redux/action";
+import TodoList from "./TodoList";
+import { postTodos } from "../Redux/action";
 const TodoInput = () => {
   const dispatch = useDispatch();
   // const store = useSelector(store => store)
@@ -19,17 +21,9 @@ const TodoInput = () => {
     }
     console.log(task, "taskinside")
    
-    const postTodos=() => {
-      dispatch(addtodorequestaction())
-      axios.post("http://localhost:8080/todos", task).then((res) => { 
-        dispatch(addtodosuccessaction(res.data))
-        console.log(res.data,"res.data.data")
-    
-      
-    
-    })
-    }
-    postTodos();
+ 
+    dispatch(postTodos(task));
+    setstate("");
   
   }
 
@@ -40,6 +34,7 @@ const TodoInput = () => {
       <input
         data-testid="todo-input"
         placeholder="add todo here.."
+        value={state}
         onChange={(e) => setstate(e.target.value)}
 
       />
