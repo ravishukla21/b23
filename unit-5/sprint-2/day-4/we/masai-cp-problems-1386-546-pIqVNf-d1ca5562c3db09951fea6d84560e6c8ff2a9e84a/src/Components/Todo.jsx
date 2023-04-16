@@ -9,7 +9,7 @@ import { gettodoerrorstatus, gettodorequestaction, gettodosuccessaction } from "
 
 // just write the fetch/get the todos logic when the component mounts, in this component
 const Todo = () => {
-  const dispatch=useDispatch();
+  
  
   
 
