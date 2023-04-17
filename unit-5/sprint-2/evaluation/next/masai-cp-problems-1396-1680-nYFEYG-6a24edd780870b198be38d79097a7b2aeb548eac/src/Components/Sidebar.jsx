@@ -46,7 +46,7 @@ export const Sidebar = () => {
       <br />
       <br />
       <br />
-      <h3 data-testid="page-number">Page No. {pageno} </h3>
+      <h3 data-testid="page-number">Page No. {pageno}</h3>
       <button data-testid="previous-page" onClick={()=>handlePage(-1)}>Previous</button>
       <br />
       <br />
