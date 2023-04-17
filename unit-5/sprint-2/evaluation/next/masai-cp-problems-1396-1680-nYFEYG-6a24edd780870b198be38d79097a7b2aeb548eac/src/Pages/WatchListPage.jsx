@@ -1,25 +1,34 @@
 import { useSelector } from "react-redux";
 
-export const WatchListPage = () => {   
-  const store=useSelector((store)=>store.watchListReducer)
-  const {watchList}=store;
-  console.log(watchList.length,"insidewatchlist")
-  
+export const WatchListPage = () => {
+  const store = useSelector((store) => store.watchListReducer)
+  const { watchList } = store;
+  console.log(watchList.length, "insidewatchlist")
+
+  //  <div>
+  // <div data-testid="watch-list"></div>
+  // </div>
+
   return (
-    <div data-testid="watch-list" style={{display:"grid",gridTemplateColumns:"auto auto auto auto",margin:"auto",gap:"20px"}}>
-    {watchList?.map((el,index)=> <div  key={index}
-    className="match-card"
-    >
-    <img className="match-image" style={{width:"100%"}} src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqi_pk1a5hwTqklXwZhqlcTXd5TntciEC_5spF-qCwCQ&usqp=CAU&ec=48665701"} alt={el.id}></img>
-    <p className="competition-name">{el.competition}</p>
-    <p className="match-year">{el.year}</p>
-    <p className="team-1">{el.team1} - {el.team1goals}</p>
-    <p className="team-2">{el.team2} - {el.team2goals}</p>
-    
-    
-    </div> )}
-     
+
+    <div >
+    <div  data-testid="watch-list" style={{ display: "grid", gridTemplateColumns: "auto auto auto auto", margin: "auto", gap: "20px" }}>
+      {watchList?.map((el, index) => <div  className="match-card" key={index}
+
+      >
+        <img className="match-image" style={{ width: "100%" }} src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqi_pk1a5hwTqklXwZhqlcTXd5TntciEC_5spF-qCwCQ&usqp=CAU&ec=48665701"} alt={el.id}></img>
+        <p className="competition-name">{el.competition}</p>
+        <p className="match-year">{el.year}</p>
+        <p className="team-1">{el.team1} - {el.team1goals}</p>
+        <p className="team-2">{el.team2} - {el.team2goals}</p>
+
+
+      </div>)}
+
     </div>
+    
+    </div>
+    
   );
 };
 
