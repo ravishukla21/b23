@@ -3,10 +3,13 @@ import axios from "axios";
 import { GET_MATCH_REQUEST, GET_MATCH_SUCCESS, GET_MATCH_FAILURE } from "./actionTypes";
 
 // http://localhost:8080/matches
-export const getMatches = (value123="") => (dispatch) => {
+export const getMatches = (value123="",pageno=1) => (dispatch) => {
   // Complete the logic
   // http://localhost:8080/matches?_sort=year&_order=desc
-  let year=""
+  // http://localhost:8080/matches?_sort=year&_order=asc&_limit=10&_page=1
+  console.log(typeof pageno,"pageno")
+ 
+  let year="";
   if(value123){
     year="year"
 
@@ -14,7 +17,7 @@ export const getMatches = (value123="") => (dispatch) => {
     year=""
   }
   dispatch(getmatchrequestaction())
-  axios.get(`http://localhost:${process.env.REACT_APP_JSON_SERVER_PORT}/matches?_sort=${year}&_order=${value123}`).then((res) => {
+  axios.get(`http://localhost:${process.env.REACT_APP_JSON_SERVER_PORT}/matches?_sort=${year}&_order=${value123}&_limit=10&_page=${pageno}`).then((res) => {
     dispatch(getmatchsuccessaction(res.data))
   })
     .catch((err) => {

@@ -5,7 +5,16 @@ import { getMatches } from "../Redux/Matches/action";
 
 export const Sidebar = () => {
   const dispatch = useDispatch();
-  const [sort, setsort] = useState("")
+  const [pageno, setpageno] = useState(1)
+  const [aesc,setaesc]=useState("")
+  const handlePage=(val)=>{
+    setpageno((prev)=>prev+val)
+    // dispatch(getMatches(pageno))
+  }
+
+ 
+   dispatch(getMatches(aesc,pageno))
+  
 
   return (
     <DIV>
@@ -13,7 +22,7 @@ export const Sidebar = () => {
       <div>
         <input data-testid="sort-asc" type="radio" name="sort" value={"asc"} onClick={(e) => {
           console.log(e.target.value)
-          dispatch(getMatches(e.target.value))
+         setaesc(e.target.value)
 
         }} />
         <label>Ascending</label>
@@ -26,7 +35,7 @@ export const Sidebar = () => {
           value={"desc"}
           onClick={(e) => {
             console.log(e.target.value)
-            dispatch(getMatches(e.target.value))
+            setaesc(e.target.value)
 
           }}
 
@@ -37,11 +46,11 @@ export const Sidebar = () => {
       <br />
       <br />
       <br />
-      <h3 data-testid="page-number">Page No. </h3>
-      <button data-testid="previous-page">Previous</button>
+      <h3 data-testid="page-number">Page No.{pageno} </h3>
+      <button data-testid="previous-page" onClick={()=>handlePage(-1)}>Previous</button>
       <br />
       <br />
-      <button data-testid="next-page">Next</button>
+      <button data-testid="next-page" onClick={()=>handlePage(1)}>Next</button>
     </DIV>
   );
 };
