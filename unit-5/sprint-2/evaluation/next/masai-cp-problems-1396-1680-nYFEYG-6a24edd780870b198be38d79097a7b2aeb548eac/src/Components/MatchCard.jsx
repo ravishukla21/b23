@@ -5,7 +5,7 @@ import {  addwatchlist } from "../Redux/WatchList/action";
 export const MatchCard = ({id,competition,year,team1,team2,team1goals,team2goals}) => {
   const dispatch=useDispatch();
   const store=useSelector((store)=>store.watchListReducer)
-  console.log(store.watchList,"watchlistreducerchecking")
+  // console.log(store.watchList,"watchlistreducerchecking")
 
   const handleClick=(id)=>{
     console.log(id,"watchlistidcheckit")
