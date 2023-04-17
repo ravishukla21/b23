@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 export const WatchListPage = () => {
   const store = useSelector((store) => store.watchListReducer)
   const { watchList } = store;
-  console.log(watchList.length, "insidewatchlist")
+  console.log(watchList, "insidewatchlist")
 
   //  <div>
   // <div data-testid="watch-list"></div>
