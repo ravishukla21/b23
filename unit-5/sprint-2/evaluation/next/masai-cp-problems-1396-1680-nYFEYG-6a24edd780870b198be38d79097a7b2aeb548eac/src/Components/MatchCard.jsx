@@ -7,9 +7,9 @@ export const MatchCard = ({id,competition,year,team1,team2,team1goals,team2goals
   const store=useSelector((store)=>store.watchListReducer)
   // console.log(store.watchList,"watchlistreducerchecking")
 
-  const handleClick=(id)=>{
-    console.log(id,"watchlistidcheckit")
-     dispatch(addwatchlist(id))
+  const handleClick=(data)=>{
+    // console.log(data,"watchlistidcheckit")
+     dispatch(addwatchlist(data))
 
   }
   return (
@@ -21,7 +21,7 @@ export const MatchCard = ({id,competition,year,team1,team2,team1goals,team2goals
       <p className="match-year">{year}</p>
       <p className="team-1">{team1} - {team1goals}</p>
       <p className="team-2">{team2} - {team2goals}</p>
-      <button className="add-to-watchlist" onClick={()=>handleClick(id)}>watchList</button>
+      <button className="add-to-watchlist" onClick={()=>handleClick({id,competition,year,team1,team2,team1goals,team2goals})}>watchList</button>
 
     </div>
   );

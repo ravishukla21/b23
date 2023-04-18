@@ -18,7 +18,7 @@ export const Login = () => {
     console.log(inputdata,"e,mailpassword")
     dispatch(login(inputdata))
   }
-  //
+  //eve.holt@reqres.in
   return (
     <DIV>
       <h2>Log In</h2>
