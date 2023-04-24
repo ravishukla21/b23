@@ -8,7 +8,7 @@ export const MainRoutes = () => {
   return <Routes>
     <Route path="/" element={<Homepage />}></Route>
     <Route path="/login" element={<Login />}></Route>
-    <Route path={`/students/:id`} element={
+    <Route path={`/student/:id`} element={
       
       <PrivateRoute>
       <StudentDetail />
