@@ -1,4 +1,4 @@
-import { BOOKREQUEST,BOOKSUCCESS,BOOKFAILURE} from "./actionTypes";
+import { BOOKREQUEST,BOOKSUCCESS,BOOKFAILURE, PATCHBOOKINFO} from "./actionTypes";
 const initialState={
     isLoading: false,
     isError: false,
@@ -13,6 +13,8 @@ export const reducer=(state=initialState,{type,payload})=>{
             return {...state,isLoading:false,isError:false,books:payload} 
         case BOOKFAILURE:
             return {...state,isLoading:false,isError:true,books:[]}
+        case PATCHBOOKINFO:
+            return {...state,isLoading:false,isError:false}
         default:
             return state
         }
