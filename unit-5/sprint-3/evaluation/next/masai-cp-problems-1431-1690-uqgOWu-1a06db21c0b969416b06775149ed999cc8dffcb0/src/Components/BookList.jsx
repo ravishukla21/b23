@@ -15,8 +15,8 @@ export const BookList = () => {
   let obj={
     params:{
       category:searchparams.getAll("category"),
-      _sort:searchparams.get("sort")&&"release_year",
-      _order:searchparams.get("sort")
+      _sort:searchparams.get("order")&&"release_year",
+      _order:searchparams.get("order")
     }
   }
   useEffect(()=>{

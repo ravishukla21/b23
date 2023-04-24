@@ -9,10 +9,18 @@ export const Sidebar = () => {
   const initialcategory=searchparams.getAll("category")
   const [category,setcategory]=useState(initialcategory||[]);
   //sort 
-  const initialorder=searchparams.get("sort")
-  const [sort,setsort]=useState(initialorder||"");
+  const initialorder=searchparams.get("order")
+  const [order,setorder]=useState(initialorder||"");
+  useEffect(()=>{
+    let params={
+      category
+    }
+    order && (params.order=order)
+    setsearchparams(params)
+   
+  },[category,order])
   const handleSort=(e)=>{
-    setsort(e.target.value);
+    setorder(e.target.value);
   }
 
   const handleChange=(e)=>{
@@ -25,14 +33,7 @@ export const Sidebar = () => {
     }
     setcategory(newCategory);
   }
-  useEffect(()=>{
-    let params={
-      category
-    }
-    sort && (params.sort=sort)
-    setsearchparams(params)
-   
-  },[category,sort])
+  
 
   return (
     <DIV>
@@ -71,7 +72,7 @@ export const Sidebar = () => {
       <h3>Sort By Release Year</h3>
       <div onChange={handleSort}>
         <input data-testid="sort-asc" type="radio" name="sort" value={"asc"} 
-        defaultChecked={sort==="asc"}  />
+        defaultChecked={order==="asc"}  />
         <label>Ascending</label>
         <br />
         <input
@@ -79,7 +80,7 @@ export const Sidebar = () => {
           type="radio"
           name="sort"
           value={"desc"} 
-          defaultChecked={sort==="desc"}
+          defaultChecked={order==="desc"}
         />
         <label>Descending</label>
       </div>
