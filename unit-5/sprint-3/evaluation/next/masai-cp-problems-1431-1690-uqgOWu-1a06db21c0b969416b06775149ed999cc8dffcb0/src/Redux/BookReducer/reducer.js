@@ -4,7 +4,7 @@ const initialState={
     isError: false,
     books: [],
   }
-
+// 
 export const reducer=(state=initialState,{type,payload})=>{
     switch(type){
         case BOOKREQUEST:
@@ -14,7 +14,7 @@ export const reducer=(state=initialState,{type,payload})=>{
         case BOOKFAILURE:
             return {...state,isLoading:false,isError:true,books:[]}
         case PATCHBOOKINFO:
-            return {...state,isLoading:false,isError:false}
+            return {...state,isLoading:false,isError:false,books:[...state.books,payload]}
         default:
             return state
         }

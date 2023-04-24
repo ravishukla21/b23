@@ -6,11 +6,14 @@ import { useSelector,useDispatch } from "react-redux";
 import styled from "styled-components";
 import { editBook } from "../Redux/BookReducer/action";
 
-export const EditBook = () => {  
+export const EditBook = (data46) => {  
+  console.log(data46,"datakdsfakkdasfhkads")
+ 
   const val=useParams();
   console.log(val,"valueusingparams") 
   const {id}=val;
   const [data,setdata]=useState({});
+ 
   const product=useSelector(store=>store.bookReducer.books);
   useEffect(()=>{
     const data=product.find((el)=>el.id===+id)
@@ -28,6 +31,7 @@ export const EditBook = () => {
 
   const handleEdit=()=>{
     dispatch(editBook(data,id))
+    console.log(id,"id")
   }
   return (
     <DIV>

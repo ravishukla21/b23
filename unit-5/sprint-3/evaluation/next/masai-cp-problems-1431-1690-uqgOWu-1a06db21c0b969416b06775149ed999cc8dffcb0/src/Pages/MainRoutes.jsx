@@ -11,7 +11,7 @@ export const MainRoutes = () => {
   <Route path="/login" element={<Login/>}></Route>
   <Route path="/edit-book/:id" element={
     <PrivateRoute>
-    <EditBook/>
+    <EditBook data />
     
     </PrivateRoute>
     

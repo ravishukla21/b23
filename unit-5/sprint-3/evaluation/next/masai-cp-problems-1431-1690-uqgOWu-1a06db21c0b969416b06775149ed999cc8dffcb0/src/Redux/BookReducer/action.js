@@ -14,8 +14,9 @@ export const getBooks = (obj)=>(dispatch) => {
 export const editBook = (dataobj,id)=>(dispatch) => {  
   // Write logic here
   dispatch({type:BOOKREQUEST})
-  axios.patch(`http://localhost:${process.env.REACT_APP_JSON_SERVER_PORT}/books/${id}`,dataobj).then(()=>{
-    dispatch({type:PATCHBOOKINFO})
+  axios.patch(`http://localhost:${process.env.REACT_APP_JSON_SERVER_PORT}/books/${id}`,dataobj).then((res)=>{
+    console.log(res.data,"patch")
+    dispatch({type:PATCHBOOKINFO,payload:res.data})
   }).catch((err)=>{
     dispatch({type:BOOKFAILURE})
   })
