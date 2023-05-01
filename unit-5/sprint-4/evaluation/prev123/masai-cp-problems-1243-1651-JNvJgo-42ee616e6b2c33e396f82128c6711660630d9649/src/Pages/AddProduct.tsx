@@ -35,6 +35,13 @@ export const AddProduct = () => {
           name="name"
           onChange={handleChange}
         ></input>
+         <input
+          className="product-image"
+          placeholder="Enter Image"
+          name="image"
+          value={add.image}
+          onChange={handleChange}
+        ></input>
         <input
           className="product-brand"
           placeholder="Enter brand"
