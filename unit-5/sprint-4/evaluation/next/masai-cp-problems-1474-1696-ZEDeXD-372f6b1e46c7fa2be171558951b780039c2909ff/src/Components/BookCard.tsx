@@ -52,7 +52,7 @@ export const BookCard = ({
 
       <button data-testid="decrease-quantity"
        onClick={()=>handleQuantity(quantity,-1,id)}
-       disabled={quantity<1}
+       disabled={quantity<=0}
       >Quantity--</button>
     </div>
     <p className="book-quantity">{quantity}</p>
