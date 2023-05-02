@@ -49,13 +49,14 @@ export const BookCard = ({
       onClick={()=>handleQuantity(quantity,1,id)}
       disabled={quantity>9}
       >Quantity++</button>
+        <p className="book-quantity">{quantity}</p>
 
       <button data-testid="decrease-quantity"
        onClick={()=>handleQuantity(quantity,-1,id)}
        disabled={quantity<=0}
       >Quantity--</button>
     </div>
-    <p className="book-quantity">{quantity}</p>
+  
     <button data-testid="delete-button" onClick={() => handleDelete(id)}>Delete</button>
 
   </div>;
