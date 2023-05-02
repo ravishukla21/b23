@@ -13,7 +13,7 @@ export const Navbar = ({home,page}:nav) =>   {
       <a className="add-book-link" href="/add-book">
         Add New Book
       </a>
-      <h3 data-testid="page-name">{page} {home}</h3>
+      <h3 data-testid="page-name">{page}{home}</h3>
     </div>
   );
 };
