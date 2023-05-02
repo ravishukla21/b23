@@ -27,7 +27,7 @@ export const AddBook = () => {
   }
   return (
     <div>
-      <Navbar page={"Add New Book"} />
+      <Navbar page="Add New Book"/>
       <form onSubmit={handleSubmit}>
         <input className="book-name" placeholder="Book Name" name="name" value={add.name} onChange={handleChange} />
         <input className="book-image" placeholder="Book image" name="image" value={add.image} onChange={handleChange} />
