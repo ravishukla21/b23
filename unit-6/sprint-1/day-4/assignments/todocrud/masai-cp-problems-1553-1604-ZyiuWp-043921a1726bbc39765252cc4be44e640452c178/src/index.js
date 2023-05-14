@@ -41,7 +41,7 @@ app.put("/:id",(req,res)=>{
     
     }
 
-    if(s1=false){
+    if(s1==false){
         res.status(400).send("Invalid argument")
     }else{
         fs.writeFileSync("./db.json",JSON.stringify(data))
@@ -68,7 +68,7 @@ app.delete(":/id",(req,res)=>{
     
     }
 
-    if(s1=false){
+    if(s1==false){
         res.status(400).send("Invalid argument")
     }else{
         fs.writeFileSync("./db.json",JSON.stringify(data))
