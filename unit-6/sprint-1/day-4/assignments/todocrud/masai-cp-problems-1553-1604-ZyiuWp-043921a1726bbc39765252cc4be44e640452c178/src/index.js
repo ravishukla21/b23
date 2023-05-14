@@ -60,12 +60,12 @@ app.delete("/:id",(req,res)=>{
     let data = JSON.parse(fs.readFileSync("./db.json", "utf-8"))
 
     let s1 = false
-    let newdata = data.filter((el) => {
+    let newdata =data.todos.filter((el) => {
         s1 = true
         return el.id != id
     })
     data.todos = newdata
-    console.log(newdata,"afterdelete")
+  
 
     if (s1 == false) {
         res.status(400).send("Invalid argument")
