@@ -4,7 +4,7 @@ const os = require("os")
 const dns=require("node:dns")
 const app = http.createServer((req, res) => {
     if (req.url == "/") {
-        res.setHeader("Content-Type","text/html")
+        res.setHeader("Content-type","text/html")
 
         res.end("<h1>Welcome to the Home Page</h1>")
     }else if(req.url=="/add/student"){
@@ -127,9 +127,9 @@ const app = http.createServer((req, res) => {
 
 // export server
 // module.exports = app
-app.listen(8080, () => {
-    console.log("server running")
-})
+// app.listen(8080, () => {
+//     console.log("server running")
+// })
 module.exports = app
 
 //  {
