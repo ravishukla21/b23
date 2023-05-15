@@ -4,7 +4,7 @@ const os = require("os")
 const dns=require("node:dns")
 const app = http.createServer((req, res) => {
     if (req.url == "/") {
-        res.setHeader("Content-type","text/html")
+        res.setHeader("Content-type","text/html","utf-8")
 
         res.end("<h1>Welcome to the Home Page</h1>")
     }else if(req.url=="/add/student"){
@@ -127,90 +127,8 @@ const app = http.createServer((req, res) => {
 
 // export server
 // module.exports = app
-// app.listen(8080, () => {
-//     console.log("server running")
-// })
+app.listen(8080, () => {
+    console.log("server running")
+})
 module.exports = app
 
-//  {
-//     "id": 1,
-//     "name": "Aman",
-//     "age": 23,
-//     "location": "Pune",
-//     "tickets": [
-//         {
-//             "ticket_id": 1,
-//             "title": "LMS Issue",
-//             "body": "My LMS is not showing the lectures"
-//         },
-//         {
-//             "ticket_id": 2,
-//             "title": "Attendance",
-//             "body": "Even though I have attended the lecture, I am marked absent"
-//         }
-//     ]
-// },
-
-
-
-// {
-//     "students": [
-//         {
-//             "id": 1,
-//             "name": "Aman",
-//             "age": 23,
-//             "location": "Pune",
-//             "tickets": [
-//                 {
-//                     "ticket_id": 1,
-//                     "title": "LMS Issue",
-//                     "body": "My LMS is not showing the lectures"
-//                 },
-//                 {
-//                     "ticket_id": 2,
-//                     "title": "Attendance",
-//                     "body": "Even though I have attended the lecture, I am marked absent"
-//                 }
-//             ]
-//         },
-//         {
-//             "id": 501,
-//             "name": "pulkittyagi",
-//             "age": 25,
-//             "location": "Delhi",
-//             "tickets": [
-//                 {
-//                     "ticket_id": 20,
-//                     "title": "New Ticket",
-//                     "body": "Ticket Body"
-//                 }
-//             ]
-//         }
-//     ],
-//     "instructors": [
-//         {
-//             "id": 1,
-//             "name": "Chunnu",
-//             "age": 45,
-//             "location": "Patna",
-//             "sub": "React",
-//             "exp": 10
-//         },
-//         {
-//             "id": 2,
-//             "name": "Payal",
-//             "age": 32,
-//             "location": "Delhi",
-//             "sub": "Node",
-//             "exp": 4
-//         },
-//         {
-//             "id": 501,
-//             "name": "pulkittyagi",
-//             "age": 25,
-//             "location": "Delhi",
-//             "sub": "Blockchain",
-//             "exp": 4
-//         }
-//     ]
-// }
