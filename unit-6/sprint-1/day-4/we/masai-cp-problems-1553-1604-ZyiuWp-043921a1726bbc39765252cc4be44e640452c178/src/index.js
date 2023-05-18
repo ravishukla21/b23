@@ -28,28 +28,28 @@ app.post("/",(req,res)=>{
     fs.writeFileSync("./db.json",JSON.stringify(data1))
     res.status(200).json(data1.todos)
 })
-app.get("/:id",(req,res)=>{
+// app.get("/:id",(req,res)=>{
 
-    const {id}=req.params;
-    console.log(id,"id123")
-    let data=JSON.parse(fs.readFileSync("./db.json","utf-8"))
-    console.log(data,"data456000")
-    let s1=false
-    let send123
-    for(let i=0;i<data.todos.length;i++){
-        if(data.todos[i].id==id){
-           send123=data.todos[i]
-            s1=true
-        }
-    }
-    if(s1==false){
-        res.status(400).send("Invalid argument")
-    }else{
+//     const {id}=req.params;
+//     console.log(id,"id123")
+//     let data=JSON.parse(fs.readFileSync("./db.json","utf-8"))
+//     console.log(data,"data456000")
+//     let s1=false
+//     let send123
+//     for(let i=0;i<data.todos.length;i++){
+//         if(data.todos[i].id==id){
+//            send123=data.todos[i]
+//             s1=true
+//         }
+//     }
+//     if(s1==false){
+//         res.status(400).send("Invalid argument")
+//     }else{
        
-        res.status(200).send(send123)
-    }
+//         res.status(200).send(send123)
+//     }
     
-})
+// })
 
 app.put("/:id",(req,res)=>{
     const {id}=req.params;
