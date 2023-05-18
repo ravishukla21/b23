@@ -11,7 +11,7 @@ app.get("/",(req,res)=>{
     const data=fs.readFileSync("./db.json","utf-8");
     console.log(data,"data")
     let data1=JSON.parse(data);
-    res.status(200).send(data1)
+    res.status(200).send(data1.tod)
 
 })
 
