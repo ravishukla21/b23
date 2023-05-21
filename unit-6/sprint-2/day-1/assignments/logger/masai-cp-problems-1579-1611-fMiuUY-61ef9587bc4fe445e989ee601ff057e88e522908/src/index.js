@@ -47,7 +47,7 @@ app.delete("/user/:id",(req,res)=>{
     const {id}=req.params;
     
     res.status(200).send({
-        "message": `user ${id} updated successfylly`
+        "message": `user ${id} deleted successfylly`
     })
 })
 app.listen(8080,()=>
