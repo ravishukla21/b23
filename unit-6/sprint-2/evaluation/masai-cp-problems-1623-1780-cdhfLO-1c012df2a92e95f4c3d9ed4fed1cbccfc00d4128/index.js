@@ -125,11 +125,15 @@ app.delete("/delete/hero/:hero_id",auth,(req,res)=>{
      try{
         if(s1==true){
              fs.writeFileSync("./db.json",JSON.stringify(data))
-             res.send(data)
+             res.send(data.heroes)
          }
 
      }catch(err){
-        console.log(err)
+        if(s1==false){
+            console.log(err)
+
+        }
+        
      }
         
 
