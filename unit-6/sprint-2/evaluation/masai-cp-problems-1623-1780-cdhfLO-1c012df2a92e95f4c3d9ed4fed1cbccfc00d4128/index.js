@@ -7,26 +7,29 @@ const fs=require("fs")
 
 
 
+
 const {auth}=require("./middlewares/auth.middleware")
  const {addID}=require("./middlewares/addID.middleware")
+ const {logger}=require("./middlewares/logger.middleware")
 
 
-
+app.use(logger)
 app.get("/",(req,res)=>{
     
  res.send("homepage")
 })
 
-app.post("/add/hero",addID,(req,res)=>{
+app.post("/add/hero",(req,res)=>{
 
     const data=JSON.parse(fs.readFileSync("./db.json","utf-8"));
     console.log(addID,"addID")
 
-    data.heroes.push(req.body)
+   console.log(JSON.parse(req.body),"bodyreq")
+ 
 
     try{
         fs.writeFileSync("./db.json",JSON.stringify(data))
-        res.send(data.heroes)
+        res.send(data)
     }catch(err){
         res.send(err)
     }
@@ -119,13 +122,16 @@ app.delete("/delete/hero/:hero_id",auth,(req,res)=>{
     })
   console.log(newdata,"newdata");
     data.heroes=newdata;
-   
-        if(s1==false){
-           res.send("err")
-        }else{
-            fs.writeFileSync("./db.json",JSON.stringify(data))
-            res.send(data)
-        }
+     try{
+        if(s1==true){
+             fs.writeFileSync("./db.json",JSON.stringify(data))
+             res.send(data)
+         }
+
+     }catch(err){
+        console.log(err)
+     }
+        
 
    
    

@@ -1,5 +1,8 @@
+
+const fs=require("fs")
 const logger = (req,res,next) => {
-  const log1=`URL:${req.url},Method:${req.method},Timestamp:${new Date().toString()}`
+  const log1=`URL: ${req.url}, Method: ${req.method}, Timestamp: ${new Date().toString()}\n`
+  fs.appendFileSync("./logs.txt",log1)
   next()
 };
 
