@@ -29,6 +29,30 @@ userRouter.post("/register",async(req,res)=>{
     }
 })
 
+userRouter.post("/login",async(req,res)=>{
+    const {email,password}=req.body;
+    try{
+        const user1=await UserModel.findOne({email})
+        if(user1){
+            bcrypt.compare(password,user1.password,(err,result)=>{
+                if(result){
+                    const token=jwt.sign({userid:user1._id,name:user1.name},"ravi");
+                    res.status(200).json({msg:"logged in",token})
+                }else{
+                    res.status(200).json({error:"wrong credentials"})
+                }
+            })
+        }else{
+            res.status(200).json({msg:"user does not exist"})
+
+        }
+    }catch(err){
+        res.status(200).json({error:err.message})
+        
+
+    }
+})
+
 
 
 
