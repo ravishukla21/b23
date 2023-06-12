@@ -22,7 +22,7 @@ const Signup = () => {
         }
         // http://localhost:4500/users/register
         console.log(payload)
-        fetch("http://localhost:4500/users/register/users/register", {
+        fetch("hhttps://weak-tan-piglet-hat.cyclic.app/users/register", {
             method: "POST",
             headers: {
               "Content-Type": "application/json"

@@ -12,7 +12,7 @@ const Posts = () => {
    
 
     useEffect(() => {
-        fetch("https://tan-grumpy-rooster.cyclic.app/notes", {
+        fetch("https://weak-tan-piglet-hat.cyclic.app/posts", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

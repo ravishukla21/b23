@@ -12,7 +12,7 @@ const Login = () => {
     }
     console.log(payload);
 
-    fetch("https://tan-grumpy-rooster.cyclic.app/users/login", {
+    fetch("https://weak-tan-piglet-hat.cyclic.app/users/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
