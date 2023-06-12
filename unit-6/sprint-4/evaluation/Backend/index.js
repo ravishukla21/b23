@@ -2,6 +2,7 @@ const express=require("express");
 const app=express();
 app.use(express.json())
 const {connection}=require("./db")
+require("dotenv").config();
 
 const {userRouter}=require("./routes/user.route");
 app.use("/users",userRouter);
@@ -10,10 +11,11 @@ app.get("/",(req,res)=>{
     res.send("homepage")
 })
 
+const {postRouter}=require("./routes/post.route");
+app.use("/posts",postRouter)
 
 
-
-app.listen(4500,async()=>{
+app.listen(process.env.PORT,async()=>{
     try{
         await connection;
         console.log("connected to db");
