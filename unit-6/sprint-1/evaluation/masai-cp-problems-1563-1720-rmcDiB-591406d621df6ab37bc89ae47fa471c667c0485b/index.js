@@ -2,9 +2,13 @@ const http = require("http")
 const fs = require("fs")
 const os = require("os")
 const dns=require("node:dns")
+const express=require("express");
+
+
+
 const app = http.createServer((req, res) => {
     if (req.url == "/") {
-        res.setHeader("Content-type","text/html","utf-8")
+        res.setHeader("Content-type","text/html")
 
         res.end("<h1>Welcome to the Home Page</h1>")
     }else if(req.url=="/add/student"){
